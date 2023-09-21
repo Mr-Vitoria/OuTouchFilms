@@ -1,0 +1,11 @@
+﻿@model Film
+
+<a class="cardHref" asp-action="Details" asp-controller="Films" asp-route-id="@Model.Id">
+    <div class="card">
+        <img src="@Model.Poster" />
+        <div class="shortDescription">
+            <p>@(Model.Title==null? Model.OriginalTitle:Model.Title)</p>
+            <p>@Model.Status</p>
+        </div>
+    </div>
+</a>

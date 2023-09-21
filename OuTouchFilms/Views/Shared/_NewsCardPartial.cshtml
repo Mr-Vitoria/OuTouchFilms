@@ -1,0 +1,15 @@
+﻿@model News
+
+
+<a style="background-image: url('@Model.BackImgUrl')" class="newsCard" asp-action="NewsDetail" asp-controller="News" asp-route-newsId="@Model.Id" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
+
+    <img src="@Model.User.ImgUrl" />
+    <div class="shortDescription">
+        <p>@Model.User.Login</p>
+        <p>@Model.Date</p>
+    </div>
+    <p>
+        @Model.Title
+    </p>
+
+</a>

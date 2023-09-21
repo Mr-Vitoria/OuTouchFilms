@@ -1,0 +1,115 @@
+﻿@using System.ComponentModel;
+@section CssLinks{
+
+    <link rel="stylesheet" href="~/css/profile.css">
+}
+
+
+<div class="modal fade" id="changeProfileModal" tabIndex="-1" aria-labelledby="changeProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="changeProfileModalLabel">@Model.user.Login</h1>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="ChangeImage" asp-controller="User">
+
+                    <h2>Изменить профиль:</h2>
+                    <p>Изображение</p>
+                    <input type="url" name="imgUrl" />
+                    <button type="submit">Изменить</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="profileSection">
+    <h2>Профиль</h2>
+    @{
+        var userImg = Model.user.ImgUrl == "" ? "https://webmg.ru/wp-content/uploads/2022/10/i-43-34.jpeg" : Model.user.ImgUrl;
+    }
+    <img src=@userImg />
+
+    <label>Логин</label>
+    <p>@Model.user.Login</p>
+    <label>Email</label>
+    <p>@Model.user.Email</p>
+    <label>Вид аккаунта</label>
+    <p>@Model.user.TypeAccount</p>
+
+    <div class="buttonsContainer">
+
+        <a href="#changeProfileModal" data-bs-toggle="modal" >Изменить профиль</a>
+        @if (Model.user.GetAccountImportant() > 5)
+        {
+            <a asp-action="AdminPanel" asp-controller="User">Админ-панель</a>
+        }
+        <a asp-action="SignOut" asp-controller="User">Выйти</a>
+    </div>
+</section>
+
+<section class="userFilmsSection">
+    @{
+        var enumType = typeof(TypeOfUserFilm);
+        var enumCount = Enum.GetNames(typeof(TypeOfUserFilm)).Length;
+    }
+    <form class="sortTypes" asp-action="Profile" asp-controller="User" method="get">
+        <h2>Ваш список фильмов:</h2>
+        <select name="TypeOfUserFilm">
+            
+
+            @for (int i = 0; i < enumCount; i++)
+            {
+                if((TypeOfUserFilm)i == TypeOfUserFilm.None)
+                {
+                    continue;
+                }
+                var description = enumType.GetMember(((TypeOfUserFilm)i).ToString())[0].GetCustomAttributes(typeof(DescriptionAttribute), false)[0] as DescriptionAttribute;
+
+                @if ((TypeOfUserFilm)i == Model.TypeOfUserFilm)
+                {
+                    <option selected value="@((TypeOfUserFilm)i)">@description.Description </option>
+                }
+                else
+                {
+                    <option value="@((TypeOfUserFilm)i)">@description.Description </option>
+                }
+            }
+        </select>
+        <button type="submit">Выбрать</button>
+    </form>
+
+    @{
+        List<Film> userFilms = Model.userFilms;
+    }
+    @if (userFilms.Count <= 0)
+    {
+        <h2>Фильмы в категории '@((enumType.GetMember(Model.TypeOfUserFilm.ToString())[0].GetCustomAttributes(typeof(DescriptionAttribute), false)[0] as DescriptionAttribute).Description)' не найдено</h2>
+    }
+    else
+    {
+
+        <div class="filmList">
+
+            @for (int i = 0; i < userFilms.Count; i++)
+            {
+
+                <a class="cardHref" asp-action="Details" asp-controller="Films" asp-route-id="@userFilms[i].Id">
+                    <div class="card">
+                        <img src="@userFilms[i].Poster" />
+                        <div class="shortDescription">
+                            <p>@userFilms[i].Title</p>
+                            <p>@userFilms[i].Status</p>
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+    }
+</section>

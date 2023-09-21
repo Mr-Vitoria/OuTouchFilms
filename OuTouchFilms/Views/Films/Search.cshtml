@@ -1,0 +1,34 @@
+﻿@using OuTouchFilms.Models;
+@section CssLinks{
+
+    <link rel="stylesheet" href="~/css/filmList.css">
+
+    <style>
+        .filmListSection{
+            width:100%;
+            margin-right:50px;
+        }
+
+        .filmList .cardHref{
+            width:21%;
+        }
+    </style>
+}
+
+<div class="d-flex justify-content-between">
+    <section class="filmListSection">
+        <h1>Найденные фильмы</h1>
+        @{
+            List<dynamic> allFilms = Model.films;
+        }
+        <div class="filmList">
+
+            @for (int i = 0; i < allFilms.Count; i++)
+            {
+                @await Html.PartialAsync("_FilmCardPartial", (Film)allFilms[i].film)
+            }
+        </div>
+        @* <p class="addAnimeHref">Не нашли нужного филььма? Нажмите по <a asp-action="Search" asp-controller="Films" asp-route-title="@Model.title" asp-route-isNeedAddAnimes="true">этой ссылке</a></p> *@
+    </section>
+</div>
+

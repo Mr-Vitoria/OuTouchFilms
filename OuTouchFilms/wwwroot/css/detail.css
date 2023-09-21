@@ -1,0 +1,338 @@
+﻿
+.mainInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+    .mainInfo .imgContainer {
+        width: 25%;
+        font-size: 1.5em;
+    }
+
+        .mainInfo .imgContainer img {
+            width: 100%;
+        }
+
+    .mainInfo .info {
+        width: 70%;
+    }
+
+        .mainInfo .info .partInfo {
+            margin: 10px 0;
+        }
+
+            .mainInfo .info .partInfo .name {
+                font-size: 1.4em;
+                font-weight: 700;
+            }
+
+            .mainInfo .info .partInfo .value {
+                font-size: 1.1em;
+            }
+        .mainInfo .info form.partInfo select{
+            width: fit-content;
+            height:fit-content;
+        }
+        .mainInfo .info form.partInfo {
+            display:flex;
+            justify-content:space-between;
+            width:100%;
+        }
+
+.description {
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+
+.screenshots img {
+    width: 400px;
+    height: 250px;
+}
+
+.trailers iframe {
+    width: 460px;
+    height: 300px;
+}
+
+.screenshots, .trailers {
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.playerSection {
+    background-color: #232323;
+}
+
+.playerContainer select{
+
+    width:fit-content;
+    border:1px solid white;
+    margin-bottom:20px;
+    text-decoration:underline;
+    padding-right:20px;
+}
+.playerContainer select:focus {
+    outline:0;
+    box-shadow:none;
+}
+
+.translationsContanier{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+.translationsContanier p{
+    font-size:2.5em;
+    margin-right:40px;
+    font-weight:bolder;
+}
+
+#filmPlayer {
+    width: 100%;
+    margin: auto;
+    height: 800px;
+}
+
+form h2{
+    margin-bottom: 50px;
+}
+
+.feedBack .imgContainer {
+    overflow: hidden;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+.feedBack .feedBackHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+}
+
+    .feedBack .feedBackHeader span {
+        margin: 0 15px;
+        font-size:1.5em;
+    }
+
+.feedBack .imgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.feedBack p,
+.feedBack textarea {
+    width: 80%;
+    margin-left: 40px;
+    padding: 30px;
+    border: 2px solid black;
+    background-color: gray;
+    border-radius: 25px;
+    font-size: 1.5em;
+}
+
+.feedBack textarea {
+    width: 90%;
+    color:white;
+    font-size:1.5em;
+}
+
+.feedbackSection button {
+    width: 25%;
+    min-width: 150px;
+    margin-top: 30px;
+    margin-left: 40%;
+    padding: 15px 0;
+    background-color: gray;
+    border-radius: 10px;
+    color:white;
+    font-size:1.5em;
+}
+
+#carouselSeries {
+    background-color: #232323;
+    height: 60px;
+    margin-top: -5px;
+}
+    #carouselSeries .owl-stage-outer {
+        padding: 0;
+    }
+
+    #carouselSeries .seriesNumber {
+        background-color: transparent;
+        font-size: 1.2em;
+        width: 100px;
+        text-align: center;
+        border: 1px solid white;
+        padding: 15px 0;
+    }
+        #carouselSeries .seriesNumber.active {
+            color: red;
+            border: 1px solid red;
+        }
+    #carouselSeries .seriesNumber:hover {
+        background-color: gray;
+    }
+.inputSeriaContainer {
+    margin-top: 25px;
+    font-size: 2em;
+}
+.inputSeriaContainer input {
+    background-color: transparent;
+    border: 1px solid white;
+    width: 150px;
+    margin-left: 25px;
+    outline: none;
+    border-radius:10px;
+    text-align:center;
+}
+.playerContainer hr {
+    border-top: 3px solid white !important;
+}
+.playerContainer .form-switch{
+    width: 100%;
+    display:flex;
+    justify-content:end;
+    font-size:1.5em;
+}
+.playerContainer .form-switch input{
+    margin-right:25px;
+}
+
+.imgContainer form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    .imgContainer form select{
+        margin-top:20px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        margin:10px 0;
+    }
+
+.achievementBlock {
+    width: 390px;
+    height: 90px;
+    background-color: #052d00;
+    box-shadow: 0 0 30px #052d00;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    animation: apperanceAcievement 1400ms;
+}
+
+.achievementContainer {
+    position: fixed;
+    bottom: 10%;
+    width: 100vw;
+    display: flex;
+    z-index: 999;
+    justify-content: center;
+}
+
+@keyframes apperanceAcievement {
+    0% {     
+    opacity:0;
+  }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.achievementBlock .description{
+    letter-spacing:1px;
+    font-size:1em;
+    margin-bottom:0px;
+    width:75%;
+}
+    .achievementBlock .description p {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+.achievementBlock img{
+    width:20%;
+    height:100%;
+    background-size:cover;
+}
+
+@media (max-width: 1375px) {
+    section {
+        margin: 50px 0px;
+    }
+}
+@media(max-width:1350px) {
+    .mainInfo{
+        flex-direction:column;
+        align-items:center;
+        margin-bottom:50px;
+    }
+    .mainInfo .imgContainer{
+        width:55%;
+        margin-bottom:50px;
+    }
+    .mainInfo .info{
+        width:100%;
+    }
+}
+@media(max-width:1250px) {
+    h2{
+        text-align:center;
+    }
+    .trailers{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+        .trailers iframe{
+            margin: 20px 0;
+        }
+    #filmPlayer {
+        height: 400px;
+    }
+}
+
+@media (max-width:1150px) {
+    .feedBack p {
+        width: 90%;
+    }
+}
+
+@media(max-width:1000px) {
+
+    .trailers iframe {
+        width:80%
+    }
+
+}
+@media(max-width:650px) {
+
+    .translationsContanier {
+        flex-direction:column;
+    }
+    .translationsContanier p,
+    .translationsContanier select{
+        width:80%;
+    }
+
+    .owl-carousel .owl-item img{
+        height:200px;
+    }
+}
+@media(max-width:500px) {
+
+    .trailers iframe {
+        width: 100%;
+    }
+}

@@ -1,0 +1,28 @@
+﻿@section CssLinks{
+
+    <link rel="stylesheet" href="~/css/profile.css">
+}
+
+<section class="loginSection">
+
+    <h2>Регистрация</h2>
+    <form asp-action="Registration" asp-controller="User" method="post">
+
+        <label for="login">Логин:</label>
+        <input type="text" name="login" id="login" required />
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required />
+
+        <label for="password">Пароль:</label>
+        <input type="password" name="password" id="password" required />
+
+
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    <div class="helpBlock">
+        <span>
+            Уже есть наш аккаунт? <a asp-action="Login" asp-controller="User">Войти в аккаунт</a>
+        </span>
+    </div>
+</section>

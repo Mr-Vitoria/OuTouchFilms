@@ -1,0 +1,131 @@
+﻿
+<form asp-action="FilmList" asp-controller="Films">
+    <h4>Сортировать по:</h4>
+    <select value="@Model.sortBy" name="sortBy">
+        @if (Model.sortBy == "Name")
+        {
+            <option selected value='Name'>Названию(А - Я)</option>
+        }
+        else
+        {
+            <option value='Name'>Названию(А - Я)</option>
+        }
+        @if (Model.sortBy == "NameReverse")
+        {
+            <option selected value='NameReverse'>Названию(Я - А)</option>
+        }
+        else
+        {
+            <option value='NameReverse'>Названию(Я - А)</option>
+        }
+        @if (Model.sortBy == "Score")
+        {
+            <option selected value='Score'>Рейтингу(0 - 10)</option>
+        }
+        else
+        {
+            <option value='Score'>Рейтингу(0 - 10)</option>
+        }
+        @if (Model.sortBy == "ScoreReverse")
+        {
+            <option selected value='ScoreReverse'>Рейтингу(10 - 0)</option>
+        }
+        else
+        {
+            <option value='ScoreReverse'>Рейтингу(10 - 0)</option>
+        }
+        @if (Model.sortBy == "Date")
+        {
+            <option selected value='Date'>Дате добавления(Старое - новое)</option>
+        }
+        else
+        {
+            <option value='Date'>Дате добавления(Старое - новое)</option>
+        }
+        @if (Model.sortBy == "DateReverse")
+        {
+            <option selected value='DateReverse'>Дате добавления(Новое - старое)</option>
+        }
+        else
+        {
+            <option value='DateReverse'>Дате добавления(Новое - старое)</option>
+        }
+    </select>
+    <div class="listHeader">
+        <h4>Жанр</h4>
+        <span onclick="listClickHandler('genresContainer',this)">Раскрыть</span>
+    </div>
+    <div class="listContainer" id="genresContainer">
+        @for (int i = 0; i < Model.allGenres.Count; i++)
+        {
+            <div class="checkBoxContainer">
+                @if (Array.Exists((string[])Model.currentGenres,el => el == Model.allGenres[i].Id.ToString()))
+                {
+                    <input checked="checked" type="checkbox" name="genres" id="@("genre" + @Model.allGenres[i].Id)" value="@Model.allGenres[i].Id" />
+                }
+                else
+                {
+                    <input type="checkbox" name="genres" id="@("genre" + @Model.allGenres[i].Id)" value="@Model.allGenres[i].Id" />
+                }
+                <label for="@("genre" + @Model.allGenres[i].Id)">@Model.allGenres[i].Title</label>
+
+            </div>
+        }
+    </div>
+
+
+    <h4>Год выхода</h4>
+    <div class="inputContainer">
+        <input name="minYear" type="number" placeholder="От @Model.minYear" min="@Model.minYear" max="@Model.maxYear" value="@Model.currentMinYear" />
+        <input name="maxYear" type="number" placeholder="До @Model.maxYear" min="@Model.minYear" max="@Model.maxYear" value="@Model.currentMaxYera" />
+    </div>
+    <button type="submit">Поиск</button>
+    <a asp-action="FilmList" asp-controller="Films">Сбросить</a>
+</form>
+
+<script>
+    let defaultMinValue = @Model.minYear;
+    let defaultMaxValue = @Model.maxYear;
+
+    let minYearInput = document.getElementsByName("minYear")[0];
+    let maxYearInput = document.getElementsByName("maxYear")[0];
+
+    minYearInput.addEventListener("change",(event) => {
+        if (minYearInput.value < defaultMinValue){
+            minYearInput.value = defaultMinValue
+        }
+        if (minYearInput.value > maxYearInput.value) {
+            minYearInput.value = maxYearInput.value
+        }
+
+        maxYearInput.min = minYearInput.value;
+        if (maxYearInput.value < minYearInput.value){
+            maxYearInput.value = minYearInput.value
+        }
+    })
+    maxYearInput.addEventListener("change", (event) => {
+        if (maxYearInput.value > defaultMaxValue) {
+            maxYearInput.value = defaultMaxValue
+        }
+        if (maxYearInput.value < minYearInput.value) {
+            maxYearInput.value = minYearInput.value
+        }
+
+
+        minYearInput.max = maxYearInput.value;
+        if (minYearInput.value > maxYearInput.value) {
+            minYearInput.value = maxYearInput.value
+        }
+    })
+
+    function listClickHandler(containerId, span){
+        let container = document.getElementById(containerId);
+        if(span.textContent == 'Раскрыть'){
+            span.textContent = 'Скрыть';
+        }
+        else{
+            span.textContent = 'Раскрыть';
+        }
+        container.classList.toggle('active');
+    }
+</script>

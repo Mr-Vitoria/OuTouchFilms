@@ -1,0 +1,91 @@
+﻿@section CssLinks{
+
+    <link rel="stylesheet" href="~/css/adminPanel.css">
+}
+<div class="d-flex flex-column">
+
+    @if (Model.user.GetAccountImportant() >= 8)
+    {
+
+        <section class="mainCommandsSection">
+            <h2>Основные команды(С возможностью ввода)</h2>
+            @* <form class="inputForm" asp-action="AddFilmByTitle" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
+                <h3>Добавить аниме по названию:</h3>
+                <input name="title" type="text" placeholder="Название" required />
+                <button type="submit">Добавить</button>
+            </form>
+            <form class="inputForm" asp-action="AddFilmBySeason" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
+                <h3>Добавить аниме по сезону:</h3>
+                <input name="title" type="text" placeholder="Сезон" title="Формат: summer_2016" required />
+                <button type="submit">Добавить</button>
+            </form>
+ *@
+
+            <h2>Основные команды(Без возможности ввода)</h2>
+@*             <div class="hrefBlock">
+                <a asp-controller="Films" asp-action="WriteDataInDb" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">Добавить случайное аниме в БД</a>
+                <p>Добавляет 1 случайное аниме в БД. Если такое аниме было, то запрос ничего не сделает</p>
+            </div>
+            <div class="hrefBlock">
+                <a asp-controller="Films" asp-action="UpdateDatabase" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">Обновить все записи в БД</a>
+                <p>Проверяет каждую запись на актуальность, перезаписывая её в БД</p>
+            </div>
+            <div class="hrefBlock">
+                <a asp-controller="Films" asp-action="AddTranslations" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">Загрузить озвучки</a>
+                <p>Проверяет озвучки на сервере kodik, записывая её в нашу БД</p>
+            </div> *@
+        </section>
+    }
+
+    @if (Model.user.GetAccountImportant() > 5)
+    {
+        <section class="addPostsSection">
+
+            <h2>Добавление поста с новостями</h2>
+            <form asp-action="AddNews" asp-controller="News" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
+                <label for="title">Название поста</label>
+                <input id="title" name="title" type="text" required />
+                <label for="backImg">Ссылка на фоновое изображение</label>
+                <input id="backImg" name="backImg" type="url" />
+
+                <label for="text">Содержание поста:</label>
+                <div class="textAreaContainer">
+                    <textarea class="form-control" id="text" name="text" aria-describedby="text"></textarea>
+                </div>
+
+                <button type="submit">Добавить</button>
+            </form>
+        </section>
+    }
+    @if (Model.user.GetAccountImportant() > 5)
+    {
+@*         <section class="addPostsSection">
+
+            <h2>Добавление достижений</h2>
+            <form asp-action="AddAchievement" asp-controller="User" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
+                <label for="Name">Название достижения</label>
+                <input id="Name" name="Name" type="text" required />
+                <label for="Description">Описание достижения</label>
+                <input id="Description" name="Description" type="text" required />
+
+                <label for="filmId">Id аниме</label>
+                <input id="filmId" name="filmId" type="number" required />
+                <label for="SeriaNumber">Номер серии</label>
+                <input id="SeriaNumber" name="SeriaNumber" type="number" required />
+                <label for="SecondsFromStart">Время получения(В секундах)</label>
+                <input id="SecondsFromStart" name="SecondsFromStart" type="number" required />
+
+
+                <label for="ImgUrl">Ссылка на изображение</label>
+                <input id="ImgUrl" name="ImgUrl" type="url" />
+
+                <button type="submit">Добавить</button>
+            </form>
+        </section> *@
+    }
+</div>
+
+@section Scripts{
+    <script src="https://cdn.tiny.cloud/1/ggaenpkc336wan2kwuppzh0fut9xkc36l79rkk0s4v3fgzz5/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="~/js/adminPanel.js"></script>
+        }

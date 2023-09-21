@@ -1,0 +1,82 @@
+﻿@section CssLinks{
+
+    <link rel="stylesheet" href="~/css/index.css">
+}
+
+@{
+    var lastFilms = @Model.lastFilms;
+}
+@if (lastFilms.Count > 0)
+{
+    <section class="currentFilmSection">
+        <h2>Самые новые фильмы</h2>
+
+        <div class="owl-carousel">
+            @for (int i = 0; i < lastFilms.Count; i++)
+            {
+                @await Html.PartialAsync("_FilmCardPartial", (Film)lastFilms[i])
+            }
+        </div>
+    </section>
+}
+<div class="mainContainer">
+
+    <section class="randomFilmSection">
+        <h2>Подборка случайных фильмов</h2>
+        <div class="filmList">
+
+            @for (int i = 0; i < @Model.randomFilms.Count; i++)
+            {
+                <a class="cardHref" asp-action="Details" asp-controller="Films" asp-route-id="@Model.randomFilms[i].film.Id">
+                    <img src="@Model.randomFilms[i].film.Poster" />
+                    <div class="d-flex flex-column">
+                        <p>@Model.randomFilms[i].film.Title</p>
+                        <p>Тип: @Model.randomFilms[i].film.Type</p>
+                        <p>Жанры:
+                            @for (int j = 0; j < Model.randomFilms[i].genres.Length; j++)
+                            {
+                                if (j == @Model.randomFilms[i].genres.Length - 2)
+                                {
+                                    <span>@Model.randomFilms[i].genres[j]</span>
+                                    break;
+                                }
+                                else
+                                {
+                                    <span>@Model.randomFilms[i].genres[j], </span>
+                                }
+                            }
+                        </p>
+                    </div>
+                </a>
+            }
+        </div>
+    </section>
+    <section class="searchFilmSection">
+        <h2>Поиск фильмов</h2>
+
+        @await Html.PartialAsync("_SearchSectionPartial", (object)Model.searchModel)
+    </section>
+</div>
+
+<section class="newsSection">
+    <div>
+        <h2>Новости</h2>
+        <a style="display:block;width:100%; text-align:right; font-size:1.7em;" asp-action="NewsList" asp-controller="News">Весь список новостей</a>
+
+    </div>
+    @{
+        List<News> news = Model.news;
+    }
+    <div class="newsList">
+
+        @for (int i = 0; i < news.Count; i++)
+        {
+            @await Html.PartialAsync("_NewsCardPartial", news[i])
+        }
+    </div>
+</section>
+
+
+@section Scripts{
+    <script src="~/js/index.js"></script>
+}

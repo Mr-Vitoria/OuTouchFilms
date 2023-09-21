@@ -1,0 +1,666 @@
+@font-face {
+    font-family: 'Play';
+    src: url('../fonts/Play-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Play;
+    color: white;
+}
+
+/* только для Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #454545ff transparent;
+}
+
+    /* для Chrome/Edge/Safari */
+    *::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: #6c6c6cff;
+        border-radius: 5px;
+    }
+
+.themeIcon {
+    font-size: 2em;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.backImage {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(3px) grayscale(40%);
+    z-index: -1;
+    object-fit: cover;
+}
+
+
+header .menuIcon {
+    display: none;
+}
+
+header .navLinks {
+    background-color: #292929d6;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 200px;
+    padding-left: 150px;
+    border-radius: 0 0 10px 10px;
+    align-items: center;
+    height: 120px;
+    box-shadow: 0 3px 20px #292929d6;
+}
+
+header .linksContainer {
+    display: flex;
+}
+
+header a {
+    margin: 0 10px;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: white;
+    transition-duration: 350ms;
+}
+
+    header a:hover {
+        transition-duration: 350ms;
+        color: #cfcfcf;
+    }
+
+header .brandLink img {
+    width: 450px;
+}
+
+header input[type="text"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid white;
+    color: white;
+    font-size: 1.3em;
+}
+
+    header input[type="text"]::placeholder {
+        color: white;
+    }
+
+    header input[type="text"]:focus {
+        outline: none;
+    }
+
+header form {
+    display: flex;
+    align-items: center;
+}
+
+header button {
+    background-color: transparent;
+    border: none;
+    margin-left: 20px;
+    font-size: 3em;
+    transition-duration: 200ms;
+    color: white;
+}
+
+    header button :hover {
+        color: gray;
+        transition-duration: 200ms;
+    }
+
+.helpSearch {
+    background-color: white;
+    position: absolute;
+    top: 74px;
+    width: 350px;
+    height: fit-content;
+    z-index: 999;
+    border-radius: 0px 0px 10px 10px;
+}
+
+    .helpSearch a {
+        height: fit-content;
+        width: 100%;
+        border: 1px solid black;
+        margin: 0;
+        padding: 0 10px;
+        transition-duration: 300ms;
+    }
+
+    .helpSearch .nofilm {
+        color: black !important;
+        width: 100%;
+        margin-top: 5px;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .helpSearch a:hover {
+        transition-duration: 300ms;
+        background-color: #8e8e8eff;
+    }
+
+    .helpSearch a .filmSearch {
+        display: flex;
+        margin: 10px 0;
+        justify-content: space-between;
+    }
+
+    .helpSearch .allfilms {
+        display: block;
+        color: black;
+        text-align: right;
+        width: 100%;
+        border: none;
+        transition-duration: 300ms;
+        border-radius: 0px 0px 10px 10px;
+    }
+
+    .helpSearch a .filmSearch img {
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        object-fit: cover;
+    }
+
+    .helpSearch a .filmSearch p {
+        width: 75%;
+        color: black !important;
+        margin: 0;
+        font-size: 0.8em;
+        overflow-y: hidden;
+    }
+
+.profileIcon {
+    border-radius: 100%;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+}
+
+.offcanvas {
+    background-color: #323232;
+    width: 35% !important;
+}
+
+    .offcanvas .brandLink {
+        width: 75%;
+    }
+
+        .offcanvas .brandLink img {
+            width: 100%;
+        }
+
+.offcanvas-title {
+    color: white;
+}
+
+.offcanvas .profileIcon {
+    width: 200px;
+    height: 200px;
+    margin: 0 6px;
+}
+
+.offcanvas .linksContainer {
+    flex-direction: column;
+}
+
+    .offcanvas .linksContainer a {
+        margin: 20px 0;
+    }
+
+.offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    background-color: rgba(71, 71, 71, 1);
+}
+
+main {
+    display: block;
+}
+
+
+
+section {
+    background-color: #585858c8;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 50px;
+    box-shadow: 10px 10px 30px rgb(75, 75, 75);
+}
+
+    section h2 {
+        color: white;
+        text-align: center;
+        font-size: 2.5em;
+    }
+
+h1 {
+    font-size: 3.5em;
+    font-weight: bolder;
+}
+
+
+a {
+    color: white;
+    transition-duration: 250ms;
+}
+
+    a:hover {
+        color: gray;
+        transition-duration: 250ms;
+    }
+
+
+.filmList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.cardHref {
+    width: 300px;
+    height: 500px;
+    transition-duration: 500ms;
+    margin-bottom: 100px;
+}
+
+.card {
+    width: 300px;
+    height: 500px;
+    flex-direction: column;
+    justify-content: start;
+    height: 610px;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    transition-duration: 500ms;
+}
+
+    .card .shortDescription {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 1.3em;
+    }
+
+        .card .shortDescription p {
+            margin: 0;
+        }
+
+            .card .shortDescription p:nth-child(1) {
+                font-size: 1.1em;
+                max-height: 70px;
+                overflow: hidden;
+            }
+
+            .card .shortDescription p:nth-child(2) {
+                font-size: 0.9em;
+                height: 30px;
+            }
+
+
+.cardHref .card:hover {
+    background-color: transparent;
+    transform: scale(1.05);
+    transition-duration: 500ms;
+}
+
+.cardHref img {
+    width: 100%;
+    height: 450px;
+}
+
+.carouselCardHref {
+    display: block;
+    width: 300px;
+    height: 500px;
+}
+
+    .carouselCardHref img {
+        width: 300px;
+        height: 450px;
+    }
+
+    .carouselCardHref span {
+        font-size: 1.6em;
+        position: relative;
+        transition-duration: 200ms;
+    }
+
+    .carouselCardHref .shortDescription {
+        height: 450px;
+        background-color: #313131b3;
+        position: relative;
+        top: -450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        opacity: 0%;
+        transition-duration: 400ms;
+    }
+
+    .carouselCardHref:hover .shortDescription {
+        transition-duration: 100ms;
+        color: white;
+        opacity: 100%;
+    }
+
+.owl-carousel .owl-stage-outer {
+    padding: 20px 0;
+}
+
+
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+select {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    width: 100%;
+    font-size: 1.5em;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+    select option {
+        color: black;
+    }
+
+button {
+    color: white;
+    border: none;
+    padding: 10px 0;
+    font-size: 2.2em;
+    border-radius: 15px;
+    transition-duration: 100ms;
+    background-color: transparent;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+    button:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+        transition-duration: 300ms;
+    }
+
+
+
+.searchFilmSection {
+    width: 23%;
+    margin-right: 50px;
+    height: fit-content;
+}
+
+    .searchFilmSection .listContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-height: 120px;
+        overflow: hidden;
+        transition-duration: 500ms;
+    }
+
+    .searchFilmSection .listHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+        .searchFilmSection .listHeader span {
+            font-size: 1.5em;
+            cursor: pointer;
+            transition-duration: 200ms;
+        }
+
+            .searchFilmSection .listHeader span:hover {
+                color: lightgray;
+                transition-duration: 200ms;
+            }
+
+    .searchFilmSection .listContainer.active {
+        transition-duration: 1500ms;
+        max-height: 1500px;
+    }
+
+    .searchFilmSection .checkBoxContainer {
+        width: 49%;
+        font-size: 1.3em;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+    }
+
+    .searchFilmSection input[type="checkbox"] {
+        width: 20px;
+        height: 18px;
+    }
+
+    .searchFilmSection label {
+        width: 80%;
+        overflow: hidden;
+    }
+
+    .searchFilmSection .inputContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .searchFilmSection input {
+        width: 40%;
+        padding: 10px;
+        border: none;
+        border-radius: 15px;
+        color: black;
+    }
+
+    .searchFilmSection button {
+        width: 80%;
+        margin: 20px 10%;
+    }
+
+    .searchFilmSection a {
+        font-size: 2em;
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+/*
+
+Троеточие
+
+*/
+.ellipsis {
+    overflow: hidden;
+    height: 100px;
+    line-height: 25px;
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+    .ellipsis:before {
+        content: "";
+        float: left;
+        width: 5px;
+        height: 200px;
+    }
+
+    .ellipsis > *:first-child {
+        float: right;
+        width: 100%;
+        margin-left: -5px;
+    }
+
+    .ellipsis:after {
+        content: "\02026";
+        box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        float: right;
+        position: relative;
+        top: -25px;
+        left: 100%;
+        width: 3em;
+        margin-left: -3em;
+        padding-right: 5px;
+        text-align: right;
+        background-size: 100% 100%;
+        /* 512x1 image,gradient for IE9. Transparent at 0% -> white at 50% -> white at 100%.*/
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAABCAMAAACfZeZEAAAABGdBTUEAALGPC/xhBQAAAwBQTFRF////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wDWRdwAAAP90Uk5TgsRjMZXhS30YrvDUP3Emow1YibnM9+ggOZxrBtpRRo94gxItwLOoX/vsHdA2yGgL8+TdKUK8VFufmHSGgAQWJNc9tk+rb5KMCA8aM0iwpWV6dwP9+fXuFerm3yMs0jDOysY8wr5FTldeoWKabgEJ8RATG+IeIdsn2NUqLjQ3OgBDumC3SbRMsVKsValZplydZpZpbJOQco2KdYeEe36BDAL8/vgHBfr2CvTyDu8R7esU6RcZ5ecc4+Af3iLcJSjZ1ivT0S/PMs3LNck4x8U7wz7Bv0G9RLtHuEq1TbJQr1OtVqqnWqRdoqBhnmSbZ5mXapRtcJGOc4t2eYiFfH9AS7qYlgAAARlJREFUKM9jqK9fEGS7VNrDI2+F/nyB1Z4Fa5UKN4TbbeLY7FW0Tatkp3jp7mj7vXzl+4yrDsYoVx+JYz7mXXNSp/a0RN25JMcLPP8umzRcTZW77tNyk63tdprzXdmO+2ZdD9MFe56Y9z3LUG96mcX02n/CW71JH6Qmf8px/cw77ZvVzB+BCj8D5vxhn/vXZh6D4uzf1rN+Cc347j79q/zUL25TPrJMfG/5LvuNZP8rixeZz/mf+vU+Vut+5NL5gPOeb/sd1dZbTs03hBuvmV5JuaRyMfk849nEM7qnEk6IHI8/qn049hB35QGHiv0yZXuMdkXtYC3ebrglcqvYxoj1muvC1nDlrzJYGbpcdHHIMo2FwYv+j3QAAOBSfkZYITwUAAAAAElFTkSuQmCC);
+        background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(white), color-stop(50%, white));
+        background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+        background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+        background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+    }
+/*
+
+Троеточие
+
+*/
+
+.addfilmHref {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+    .addfilmHref a {
+        color: white;
+        text-decoration: underline;
+        transition-duration: 150ms;
+    }
+
+        .addfilmHref a:hover {
+            color: black;
+            transition-duration: 150ms;
+        }
+
+
+
+
+
+
+footer {
+    background-color: #292929d6;
+    min-height: 100px;
+}
+
+    footer .copyright {
+        font-size: 1.5em;
+        color: white;
+        font-weight: 700;
+    }
+
+    footer .footerContainer {
+        padding: 20px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        height: 100%;
+    }
+
+    footer .hrefContainer {
+        display: flex;
+        flex-direction: column;
+        max-height: 100px;
+        flex-wrap: wrap;
+    }
+
+        footer .hrefContainer a {
+            font-size: 1.1em;
+            margin: 0 20px;
+        }
+
+
+
+@media(max-width:1375px) {
+
+    header .navLinks {
+        padding: 0 100px;
+    }
+
+        header .navLinks .linksContainer,
+        header .navLinks form,
+        header .navLinks .profileHref,
+        header .navLinks .profileIcon,
+        header .navLinks .themeIcon {
+            display: none !important;
+        }
+
+    header .menuIcon {
+        display: block;
+    }
+
+    section {
+        margin: 0;
+    }
+}
+
+@media(max-width:1050px) {
+
+    .filmContainer {
+        max-width: 100%;
+    }
+
+    .offcanvas {
+        width: fit-content !important;
+    }
+}
+
+@media(max-width:720px) {
+    .navLinks .brandLink img {
+        width: 100%;
+    }
+
+    .navLinks .brandLink {
+        width: 60%;
+    }
+
+    .navLinks {
+        padding: 0 20px !important;
+    }
+}
+
+@media(max-width:400px) {
+    .offcanvas .linksContainer {
+        width: 100%;
+    }
+
+    .offcanvas form button {
+        display: none;
+    }
+}

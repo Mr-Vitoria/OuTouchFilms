@@ -1,0 +1,213 @@
+﻿@{
+    ViewData["Title"] = Model.film.Title;
+}
+
+@using System.ComponentModel;
+@using Newtonsoft.Json;
+@section CssLinks{
+
+    <link rel="stylesheet" href="~/css/detail.css">
+}
+
+<img class="backImage" src="@Model.film.CoverPoster" />
+
+<section class="descriptionSection">
+    <div class="mainInfo">
+        <div class="imgContainer">
+
+            <img src="@Model.film.Poster" />
+            @if (Context.Request.Cookies.ContainsKey("id"))
+            {
+                var enumType = typeof(TypeOfUserFilm);
+                var enumCount = Enum.GetNames(typeof(TypeOfUserFilm)).Length;
+
+
+                <form asp-action="ChangeUsersFilm" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
+                    <input type="hidden" name="filmId" value="@Model.film.Id" />
+                    <input type="hidden" name="userId" value='@Context.Request.Cookies["id"]' />
+                    <select name="typeFilmUser">
+                        @for (int i = 0; i < enumCount; i++)
+                        {
+                            var description = enumType.GetMember(((TypeOfUserFilm)i).ToString())[0].GetCustomAttributes(typeof(DescriptionAttribute), false)[0] as DescriptionAttribute;
+
+                            @if ((TypeOfUserFilm)i == Model.userType)
+                            {
+                                <option selected value="@((TypeOfUserFilm)i)">@description.Description </option>
+                            }
+                            else
+                            {
+                                <option value="@((TypeOfUserFilm)i)">@description.Description </option>
+                            }
+                        }
+                    </select>
+                    <button type="submit">Изменить</button>
+                </form>
+            }
+        </div>
+        <div class="info">
+            <h2>@Model.film.Title (@Model.film.KinopoiskRating)</h2>
+            @if (@Model.film.OriginalTitle != null)
+            {
+                <div class="partInfo">
+                    <span class="name">Также: </span>
+                    <span class="value">@Model.film.OriginalTitle</span>
+                </div>
+            }
+            <hr />
+            <div class="partInfo">
+                <span class="name">Тип: </span>
+                <span class="value">@Model.film.Type</span>
+            </div>
+
+            <div class="partInfo">
+                <span class="name">Жанр: </span>
+                @for (int i = 0; i < @Model.genres.Length; i++)
+                {
+                    if (i == @Model.genres.Length - 1)
+                    {
+                        <span class="value">@Model.genres[i]</span>
+                    }
+                    else
+                    {
+                        <span class="value">@Model.genres[i], </span>
+                    }
+
+                }
+            </div>
+@*             <div class="partInfo">
+                <span class="name">Страны: </span>
+                @for (int i = 0; i < @Model.countries.Length - 1; i++)
+                {
+                    if (i == @Model.countries.Length - 2)
+                    {
+                        <span class="value">@Model.countries[i]</span>
+                    }
+                    else
+                    {
+                        <span class="value">@Model.countries[i], </span>
+                    }
+
+                }
+            </div> *@
+            @if (@Model.film.Duration != null)
+            {
+                <div class="partInfo">
+                    <span class="name">Продолжительность: </span>
+                    <span class="value">@Model.film.Duration</span>
+                </div>
+            }
+            <div class="partInfo">
+                <span class="name">Год выхода: </span>
+                <span class="value">@Model.film.Year</span>
+            </div>
+            @if (Model.accountImportant >= 8)
+            {
+                <a asp-area="" asp-controller="Films" asp-action="AddDetailsInformation" asp-route-id="@Model.film.Id" asp-route-kinopoiskId="@Model.film.KinopoiskId" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">Обновить запись в бд</a>
+
+            }
+        </div>
+    </div>
+    <div class="description">@Html.Raw(Model.film.Description)</div>
+
+</section>
+
+<section class="playerSection">
+    <div class="kinobox_player"></div>
+</section>
+
+<section class="feedbackSection">
+
+    @if (Context.Request.Cookies["image"] != null)
+    {
+        <form asp-action="AddComment" asp-controller="User"
+              asp-route-filmId="@Model.film.Id"
+              asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
+            <h2 style="text-align:left; margin-top:50px;">Поделитесь своим мнением о просмотре</h2>
+            <div class="feedBack">
+                <div class="imgContainer">
+                    <img src="@Context.Request.Cookies["image"]" />
+                </div>
+                <textarea id="text" name="text"></textarea>
+            </div>
+            <button type="submit">Оставить</button>
+        </form>
+    }
+    else
+    {
+        <h2 style="text-align:center;font-size:1.7em;color:white;margin-top:50px">Зарегистрируйтесь, чтобы оставлять комментарии</h2>
+    }
+
+
+    <h2 style="text-align:center; margin:40px 0">Комментарии</h2>
+    @if (Model.filmComments.Count == 0)
+    {
+        <h2 style="text-align:center;font-size:1.7em;color:white">Здесь еще нет комментариев, будьте первым</h2>
+    }
+    else
+    {
+        @for (int i = 0; i < Model.filmComments.Count; i++)
+        {
+            <div class="feedBack">
+                <div class="feedBackHeader">
+                    <div class="imgContainer">
+                        <img src="@Model.filmComments[i].User.ImgUrl" />
+                    </div>
+                    <span>@Model.filmComments[i].User.Login</span>
+                </div>
+                <p>@Model.filmComments[i].Text</p>
+            </div>
+        }
+    }
+
+</section>
+@section Scripts{
+
+    <script src="https://kinobox.tv/kinobox.min.js"></script>
+    <script>new Kinobox('.kinobox_player', { search: { kinopoisk: '@Model.film.KinopoiskId' } }).init();</script>
+    @* <script>new Kinobox('.kinobox_player', { search: { kinopoisk: '1263399' } }).init();</script> *@
+
+    @*     <script src="~/js/detail.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#carouselFranchise").owlCarousel({
+                margin: 20,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                },
+                autoWidth: true
+            });
+            $("#carouselScreenshots").owlCarousel({
+                margin: 20,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 3
+                    }
+                },
+                autoplayHoverPause: true
+            });
+            $("#carouselSeries").owlCarousel({
+                autoWidth: true,
+                margin: 8
+            });
+            var achievements = @Html.Raw(JsonConvert.SerializeObject(Model.achievements));
+
+            initializate('@Model.Film.KodikUrl', @lastTranslation, @Model.Film.MaxEpisodes, @Model.Film.Id, '@Model.Film.Status', achievements);
+        });
+    </script> *@
+}
