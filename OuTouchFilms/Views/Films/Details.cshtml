@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = Model.film.Title;
+    ViewData["Title"] = (Model.film.Title == null ? Model.film.Title : Model.film.OriginalTitle);
 }
 
 @using System.ComponentModel;
@@ -45,8 +45,8 @@
             }
         </div>
         <div class="info">
-            <h2>@Model.film.Title (@Model.film.KinopoiskRating)</h2>
-            @if (@Model.film.OriginalTitle != null)
+            <h2>@(Model.film.Title == null ? Model.film.OriginalTitle : Model.film.Title) (@Model.film.KinopoiskRating)</h2>
+            @if (Model.film.OriginalTitle != null && Model.film.OriginalTitle != "")
             {
                 <div class="partInfo">
                     <span class="name">Также: </span>

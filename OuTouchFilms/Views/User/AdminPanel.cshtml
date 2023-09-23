@@ -9,12 +9,12 @@
 
         <section class="mainCommandsSection">
             <h2>Основные команды(С возможностью ввода)</h2>
-            @* <form class="inputForm" asp-action="AddFilmByTitle" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
-                <h3>Добавить аниме по названию:</h3>
+            <form class="inputForm" asp-action="AddFilmByTitle" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
+                <h3>Добавить фильм по названию:</h3>
                 <input name="title" type="text" placeholder="Название" required />
                 <button type="submit">Добавить</button>
             </form>
-            <form class="inputForm" asp-action="AddFilmBySeason" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
+            @*<form class="inputForm" asp-action="AddFilmBySeason" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
                 <h3>Добавить аниме по сезону:</h3>
                 <input name="title" type="text" placeholder="Сезон" title="Формат: summer_2016" required />
                 <button type="submit">Добавить</button>

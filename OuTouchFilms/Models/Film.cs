@@ -7,14 +7,14 @@ namespace OuTouchFilms.Models
         public int Id { get; set; }
         public int KinopoiskId { get; set; }
         public string? ImdbId { get; set; }
-        public float KinopoiskRating { get; set; }
+        public float? KinopoiskRating { get; set; }
         public float? ImdbRating { get; set; }
         public string? Title { get; set; }
         public string? OriginalTitle { get; set; }
         public string? Poster { get; set; }
         public string? CoverPoster { get; set; }
         public int Year { get; set; }
-        public int? Duration { get; set; }
+        public string? Duration { get; set; }
         public string? Description { get; set; }
         public string? Annotation { get; set; }
         public string? Status { get; set; }
