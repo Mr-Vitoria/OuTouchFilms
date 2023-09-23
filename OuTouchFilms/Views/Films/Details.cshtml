@@ -75,7 +75,7 @@
                 }
             </div>
 @*             <div class="partInfo">
-                <span class="name">Страны: </span>
+                <span class="name">Страна: </span>
                 @for (int i = 0; i < @Model.countries.Length - 1; i++)
                 {
                     if (i == @Model.countries.Length - 2)
@@ -102,7 +102,7 @@
             </div>
             @if (Model.accountImportant >= 8)
             {
-                <a asp-area="" asp-controller="Films" asp-action="AddDetailsInformation" asp-route-id="@Model.film.Id" asp-route-kinopoiskId="@Model.film.KinopoiskId" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">Обновить запись в бд</a>
+                <a asp-area="" asp-controller="Films" asp-action="AddDetailsInformation" asp-route-id="@Model.film.Id" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">Обновить запись в бд</a>
 
             }
         </div>

@@ -23,6 +23,15 @@ namespace OuTouchFilms.Models
         public string Countries { get; set; }
         public string Genres { get; set; }
         public string? Slogan { get; set; }
+        
+        public string? EditorIds { get; set; }
+        public string? DesignIds { get; set; }
+        public string? ComposerIds { get; set; }
+        public string? OperatorIds { get; set; }
+        public string? WriterIds { get; set; }
+        public string? ProducerIds { get; set; }
+        public string? ActorIds { get; set; }
+        public string? DirectorIds { get; set; }
 
         public async Task<string[]> GetGenres(OuTouchDbContext context)
         {

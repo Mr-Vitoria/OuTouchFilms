@@ -14,6 +14,11 @@
                 <input name="title" type="text" placeholder="Название" required />
                 <button type="submit">Добавить</button>
             </form>
+            <form class="inputForm" asp-action="AddFilmById" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
+                <h3>Добавить фильм по id кинопоиска:</h3>
+                <input name="id" type="number" placeholder="Id кинопоиска" required />
+                <button type="submit">Добавить</button>
+            </form>
             @*<form class="inputForm" asp-action="AddFilmBySeason" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
                 <h3>Добавить аниме по сезону:</h3>
                 <input name="title" type="text" placeholder="Сезон" title="Формат: summer_2016" required />

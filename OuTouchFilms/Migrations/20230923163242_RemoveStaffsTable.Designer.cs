@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using OuTouchFilms.Models;
@@ -11,9 +12,11 @@ using OuTouchFilms.Models;
 namespace OuTouchFilms.Migrations
 {
     [DbContext(typeof(OuTouchDbContext))]
-    partial class OuTouchDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230923163242_RemoveStaffsTable")]
+    partial class RemoveStaffsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,9 +70,6 @@ namespace OuTouchFilms.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("DesignIds")
-                        .HasColumnType("text");
-
-                    b.Property<string>("DirectorIds")
                         .HasColumnType("text");
 
                     b.Property<string>("Duration")
@@ -177,36 +177,6 @@ namespace OuTouchFilms.Migrations
                     b.ToTable("FilmGenres");
                 });
 
-            modelBuilder.Entity("OuTouchFilms.Models.FilmStaff", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
-                    b.Property<int>("FilmId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Profession")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("StaffId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FilmId");
-
-                    b.HasIndex("StaffId");
-
-                    b.ToTable("FilmStaffs");
-                });
-
             modelBuilder.Entity("OuTouchFilms.Models.News", b =>
                 {
                     b.Property<int>("Id")
@@ -242,30 +212,6 @@ namespace OuTouchFilms.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("News");
-                });
-
-            modelBuilder.Entity("OuTouchFilms.Models.Staff", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Poster")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("SwaggerId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Staffs");
                 });
 
             modelBuilder.Entity("OuTouchFilms.Models.User", b =>
@@ -344,25 +290,6 @@ namespace OuTouchFilms.Migrations
                     b.Navigation("Film");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("OuTouchFilms.Models.FilmStaff", b =>
-                {
-                    b.HasOne("OuTouchFilms.Models.Film", "Film")
-                        .WithMany()
-                        .HasForeignKey("FilmId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("OuTouchFilms.Models.Staff", "Staff")
-                        .WithMany()
-                        .HasForeignKey("StaffId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Film");
-
-                    b.Navigation("Staff");
                 });
 
             modelBuilder.Entity("OuTouchFilms.Models.News", b =>

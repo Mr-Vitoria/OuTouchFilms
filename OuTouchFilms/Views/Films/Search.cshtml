@@ -28,7 +28,7 @@
                 @await Html.PartialAsync("_FilmCardPartial", (Film)allFilms[i].film)
             }
         </div>
-        @* <p class="addAnimeHref">Не нашли нужного филььма? Нажмите по <a asp-action="Search" asp-controller="Films" asp-route-title="@Model.title" asp-route-isNeedAddAnimes="true">этой ссылке</a></p> *@
+        <p class="addFilmHref">Не нашли нужного фильма? Нажмите по <a asp-action="Search" asp-controller="Films" asp-route-title="@Model.title" asp-route-isNeedAddFilms="true">этой ссылке</a></p>
     </section>
 </div>
 

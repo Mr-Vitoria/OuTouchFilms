@@ -553,18 +553,18 @@ button {
 
 */
 
-.addfilmHref {
+.addFilmHref {
     font-size: 1.5em;
     text-align: center;
 }
 
-    .addfilmHref a {
+    .addFilmHref a {
         color: white;
         text-decoration: underline;
         transition-duration: 150ms;
     }
 
-        .addfilmHref a:hover {
+        .addFilmHref a:hover {
             color: black;
             transition-duration: 150ms;
         }
