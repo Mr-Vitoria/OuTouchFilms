@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = (Model.film.Title == null ? Model.film.Title : Model.film.OriginalTitle);
+    ViewData["Title"] = (Model.film.Title != null ? Model.film.Title : Model.film.OriginalTitle);
 }
 
 @using System.ComponentModel;
