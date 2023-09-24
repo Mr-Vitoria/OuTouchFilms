@@ -20,6 +20,8 @@
 
         .mainInfo .info .partInfo {
             margin: 10px 0;
+            max-height: 90px;
+            overflow-y: hidden;
         }
 
             .mainInfo .info .partInfo .name {
@@ -46,9 +48,8 @@
     margin-bottom: 50px;
 }
 
-.screenshots img {
-    width: 400px;
-    height: 250px;
+#carouselScreenshots img {
+    height: 300px;
 }
 
 .trailers iframe {

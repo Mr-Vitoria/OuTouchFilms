@@ -275,7 +275,10 @@ namespace OuTouchFilms.Services
             return new
             {
                 film = filmDb,
+                filmStaffs = await filmDb.GetStaffs(context),
                 genres = await filmDb.GetGenres(context),
+                countries = await filmDb.GetCountries(context),
+                screenshots = filmDb.GetScreenshots(),
                 filmComments = await context.FilmComments.Where(comm => comm.FilmId == filmDb.Id).ToListAsync(),
                 userType = type,
                 accountImportant = accountImportant
@@ -477,7 +480,7 @@ namespace OuTouchFilms.Services
                 {
                     staff = new Staff()
                     {
-                        Name = staffArray[i].nameRu,
+                        Name = staffArray[i].nameRu == "" ? staffArray[i].nameEn : staffArray[i].nameRu,
                         Poster = staffArray[i].posterUrl,
                         SwaggerId = staffId
                     };
@@ -539,10 +542,28 @@ namespace OuTouchFilms.Services
                 }
 
             }
-
+            film = await AddFilmScreenshots(film);
             context.Films.Update(film);
             await context.SaveChangesAsync();
             return true;
+        }
+        public async Task<Film> AddFilmScreenshots(Film film)
+        {
+            var screenInformationUrl = "https://kinopoiskapiunofficial.tech/api/v2.2/films/"+ film.KinopoiskId + "/images?type=STILL&page=1";
+            HttpClient httpClientScreenInformation = new HttpClient();
+            httpClientScreenInformation.DefaultRequestHeaders.Add("accept", "application/json");
+            httpClientScreenInformation.DefaultRequestHeaders.Add("X-API-KEY", "038f49e8-10f0-495e-a44d-845920b960d9");
+            HttpResponseMessage httpResponseMessageScreenInformation = await httpClientScreenInformation.GetAsync(screenInformationUrl);
+            StreamReader readerScreenInformation = new StreamReader(httpResponseMessageScreenInformation.Content.ReadAsStream());
+            dynamic screenArray = (dynamic)JsonConvert.DeserializeObject(readerScreenInformation.ReadToEnd());
+
+            film.Screenshots = "";
+            for (int i = 0; i < screenArray.items.Count&&i<10; i++)
+            {
+                film.Screenshots += screenArray.items[i].imageUrl + ";";
+
+            }
+            return film;
         }
     }
 }

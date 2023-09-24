@@ -12,6 +12,7 @@ namespace OuTouchFilms.Models
         public string? Title { get; set; }
         public string? OriginalTitle { get; set; }
         public string? Poster { get; set; }
+        public string? Screenshots { get; set; }
         public string? CoverPoster { get; set; }
         public int Year { get; set; }
         public string? Duration { get; set; }
@@ -56,6 +57,32 @@ namespace OuTouchFilms.Models
                 countries[i] = allCountries.FirstOrDefault(g => g.Id == int.Parse(countriesId[i])).Name;
             }
             return countries;
+        }
+        public async Task<Dictionary<string,List<FilmStaff>>> GetStaffs(OuTouchDbContext context)
+        {
+            Dictionary<string, List<FilmStaff>> staffs = new Dictionary<string, List<FilmStaff>>();
+
+            await context.Staffs.LoadAsync();
+            List<FilmStaff> filmStaffs = await context.FilmStaffs.Where(fs => fs.FilmId == Id).ToListAsync();
+
+            staffs.Add("Editors", filmStaffs.Where(fs => fs.Profession == "Монтажеры").ToList());
+            staffs.Add("Designs", filmStaffs.Where(fs => fs.Profession == "Художники").ToList());
+            staffs.Add("Composers", filmStaffs.Where(fs => fs.Profession == "Композиторы").ToList());
+            staffs.Add("Operators", filmStaffs.Where(fs => fs.Profession == "Операторы").ToList());
+            staffs.Add("Writers", filmStaffs.Where(fs => fs.Profession == "Сценаристы").ToList());
+            staffs.Add("Producers", filmStaffs.Where(fs => fs.Profession == "Продюсеры").ToList());
+            staffs.Add("Actors", filmStaffs.Where(fs => fs.Profession == "Актеры").ToList());
+            staffs.Add("Directors", filmStaffs.Where(fs => fs.Profession == "Режиссеры").ToList());
+
+            return staffs;
+        }
+        public string[] GetScreenshots()
+        {
+            if(Screenshots != null)
+            {
+                return Screenshots.Split(';');
+            }
+            return null;
         }
     }
 }
