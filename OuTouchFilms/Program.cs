@@ -10,10 +10,11 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<INewsService, NewsService>();
 builder.Services.AddTransient<IFilmService, FilmService>();
+builder.Services.AddTransient<IMailService, MailService>();
 
 builder.Services.AddDbContext<OuTouchDbContext>(options =>
 {
-    options.UseNpgsql(builder.Configuration.GetConnectionString("TestOuTouchDb"), confOptions =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("OuTouchDb"), confOptions =>
     {
         confOptions.SetPostgresVersion(new Version("9.6"));
     });

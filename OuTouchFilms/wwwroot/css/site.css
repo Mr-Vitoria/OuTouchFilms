@@ -161,7 +161,7 @@ header button {
         justify-content: space-between;
     }
 
-    .helpSearch .allfilms {
+    .helpSearch .allFilms {
         display: block;
         color: black;
         text-align: right;
@@ -553,18 +553,18 @@ button {
 
 */
 
-.addfilmHref {
+.addFilmHref {
     font-size: 1.5em;
     text-align: center;
 }
 
-    .addfilmHref a {
+    .addFilmHref a {
         color: white;
         text-decoration: underline;
         transition-duration: 150ms;
     }
 
-        .addfilmHref a:hover {
+        .addFilmHref a:hover {
             color: black;
             transition-duration: 150ms;
         }
@@ -576,34 +576,43 @@ button {
 
 footer {
     background-color: #292929d6;
-    min-height: 100px;
+    min-height: 200px;
 }
 
     footer .copyright {
         font-size: 1.5em;
         color: white;
         font-weight: 700;
+        vertical-align: bottom;
+        text-align: center;
+        margin: 0;
+        border-top: 2px solid white;
     }
 
     footer .footerContainer {
         padding: 20px 100px;
         display: flex;
         justify-content: space-between;
-        align-items: end;
+        align-items: start;
         height: 100%;
     }
 
     footer .hrefContainer {
         display: flex;
         flex-direction: column;
-        max-height: 100px;
+        align-items: start;
+        /*max-height:200px;*/
         flex-wrap: wrap;
     }
 
         footer .hrefContainer a {
             font-size: 1.1em;
-            margin: 0 20px;
+            color:white;
         }
+        footer .hrefContainer a:hover {
+            color:gray;
+        }
+
 
 
 

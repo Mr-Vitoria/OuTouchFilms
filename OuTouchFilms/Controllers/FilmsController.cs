@@ -33,7 +33,7 @@ namespace OuTouchFilms.Controllers
             });
         }
 
-
+        /*Не использовать!!! Переделай. Нет проверки существования видео к фильму*/
         public async Task<IActionResult> AddRandomFilm(string lastUrl = "/")
         {
             var urlSwagger = "https://kinopoiskapiunofficial.tech/api/v2.2/films?order=RATING&type=ALL&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&page=1";
@@ -126,36 +126,28 @@ namespace OuTouchFilms.Controllers
             return View(await filmService.getFilmInformation(id, userId));
         }
 
-        public async Task<IActionResult> AddDetailsInformation(string kinopoiskId, int id, string lastUrl = "/")
+        public async Task<IActionResult> AddDetailsInformation(int id, string lastUrl = "/")
         {
-            var urlSwagger = "https://kinopoiskapiunofficial.tech/api/v2.2/films/"+kinopoiskId;
-            HttpClient httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Add("X-API-KEY", "038f49e8-10f0-495e-a44d-845920b960d9");
-            httpClient.DefaultRequestHeaders.Add("accept", "application/json");
-            HttpResponseMessage httpResponseMessage = await httpClient.GetAsync(urlSwagger);
-            Stream responseStream = httpResponseMessage.Content.ReadAsStream();
-            StreamReader reader = new StreamReader(responseStream);
-
-            dynamic filmJson = (dynamic)JsonConvert.DeserializeObject(reader.ReadToEnd());
-
-            Film film = await context.Films.FirstOrDefaultAsync(f => f.Id == id);
-
-            film.Duration = filmJson.filmLength;
-            film.Slogan = filmJson.slogan;
-            film.Description = filmJson.description;
-
-            film.CoverPoster = filmJson.coverUrl;
-            film.LastUpdate = filmJson.lastSync;
-
-            context.Films.Update(film);
-            await context.SaveChangesAsync();
+            await filmService.AddFullFilmsInformation(id);
 
             return Redirect(lastUrl);
         }
 
-        public async Task<IActionResult> Search(string title, int count = -1)
+        public async Task<IActionResult> Search(string title, int count = -1, bool isNeedAddFilms = false)
         {
             var films = await filmService.getFilmsByTitle(title, count);
+
+            if (isNeedAddFilms)
+            {
+                await filmService.AddFilmsByTitle(title);
+
+                return RedirectToAction("Search","Films",new
+                {
+                    title = title,
+                    count = count
+                });
+            }
+
             return View(new
             {
                 films = films,
@@ -226,7 +218,7 @@ namespace OuTouchFilms.Controllers
 
         }
 
-        public async Task<bool> ChangeUsersAnimeFromJs(int userId, int filmId, TypeOfUserFilm typeFilmUser)
+        public async Task<bool> ChangeUsersFilmFromJs(int userId, int filmId, TypeOfUserFilm typeFilmUser)
         {
             UserFilms userFilm = await context.UserFilms.FirstOrDefaultAsync(f => f.UserId == userId && f.FilmId == filmId);
             Film film = await context.Films.FindAsync(filmId);
@@ -265,6 +257,20 @@ namespace OuTouchFilms.Controllers
             await context.SaveChangesAsync();
             return true;
 
+        }
+
+
+        public async Task<IActionResult> AddFilmByTitle(string title,string lastUrl = "/")
+        {
+            await filmService.AddFilmsByTitle(title);
+
+            return Redirect(lastUrl);
+        }
+        public async Task<IActionResult> AddFilmById(int id,string lastUrl = "/")
+        {
+            await filmService.AddFilmsById(id);
+
+            return Redirect(lastUrl);
         }
     }
 }

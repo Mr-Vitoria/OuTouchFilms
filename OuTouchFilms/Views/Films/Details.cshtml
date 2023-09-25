@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = Model.film.Title;
+    ViewData["Title"] = (Model.film.Title != null ? Model.film.Title : Model.film.OriginalTitle);
 }
 
 @using System.ComponentModel;
@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="~/css/detail.css">
 }
 
+@if (Model.screenshots != null)
+{
+    <img class="backImage" src="@Model.screenshots[0]" />
+}
 <img class="backImage" src="@Model.film.CoverPoster" />
 
 <section class="descriptionSection">
@@ -45,14 +49,18 @@
             }
         </div>
         <div class="info">
-            <h2>@Model.film.Title (@Model.film.KinopoiskRating)</h2>
-            @if (@Model.film.OriginalTitle != null)
+            <h2>@(Model.film.Title == null ? Model.film.OriginalTitle : Model.film.Title) (@Model.film.KinopoiskRating)</h2>
+            @if (Model.film.OriginalTitle != null && Model.film.OriginalTitle != "")
             {
                 <div class="partInfo">
                     <span class="name">Также: </span>
                     <span class="value">@Model.film.OriginalTitle</span>
                 </div>
             }
+            <div class="partInfo">
+                <span class="name">Id на Кинопоиске: </span>
+                <span class="value">@Model.film.KinopoiskId</span>
+            </div>
             <hr />
             <div class="partInfo">
                 <span class="name">Тип: </span>
@@ -74,8 +82,10 @@
 
                 }
             </div>
-@*             <div class="partInfo">
-                <span class="name">Страны: </span>
+
+
+            <div class="partInfo">
+                <span class="name">Страна: </span>
                 @for (int i = 0; i < @Model.countries.Length - 1; i++)
                 {
                     if (i == @Model.countries.Length - 2)
@@ -88,12 +98,20 @@
                     }
 
                 }
-            </div> *@
+            </div>
+
             @if (@Model.film.Duration != null)
             {
                 <div class="partInfo">
                     <span class="name">Продолжительность: </span>
-                    <span class="value">@Model.film.Duration</span>
+                    @if (Model.film.Duration.Contains(":"))
+                    {
+                        <span class="value">@Model.film.Duration</span>
+                    }
+                    else
+                    {
+                        <span class="value">@Model.film.Duration мин.</span>
+                    }
                 </div>
             }
             <div class="partInfo">
@@ -102,13 +120,200 @@
             </div>
             @if (Model.accountImportant >= 8)
             {
-                <a asp-area="" asp-controller="Films" asp-action="AddDetailsInformation" asp-route-id="@Model.film.Id" asp-route-kinopoiskId="@Model.film.KinopoiskId" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">Обновить запись в бд</a>
-
+                <a asp-area="" asp-controller="Films" asp-action="AddDetailsInformation" asp-route-id="@Model.film.Id" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">Добавить информацию по фильму</a>
             }
+
+            <hr />
+
+            @{
+                List<FilmStaff> actors = Model.filmStaffs["Actors"];
+            }
+            @if (actors.Count > 0)
+            {
+                <div class="partInfo">
+                    <span class="name">Актеры: </span>
+                    @for (int i = 0; i < actors.Count; i++)
+                    {
+                        if (i == actors.Count - 1)
+                        {
+                            <span class="value">@actors[i].Staff.Name</span>
+                        }
+                        else
+                        {
+                            <span class="value">@actors[i].Staff.Name, </span>
+                        }
+
+                    }
+                </div>
+            }
+            @{
+                List<FilmStaff> directors = Model.filmStaffs["Directors"];
+            }
+            @if (directors.Count > 0)
+            {
+                <div class="partInfo">
+                    <span class="name">Режиссеры: </span>
+                    @for (int i = 0; i < directors.Count; i++)
+                    {
+                        if (i == directors.Count - 1)
+                        {
+                            <span class="value">@directors[i].Staff.Name</span>
+                        }
+                        else
+                        {
+                            <span class="value">@directors[i].Staff.Name, </span>
+                        }
+
+                    }
+                </div>
+            }
+            
+            @{
+                List<FilmStaff> designs = Model.filmStaffs["Designs"];
+            }
+            @if (designs.Count > 0)
+            {
+                <div class="partInfo">
+                    <span class="name">Художники: </span>
+                    @for (int i = 0; i < designs.Count; i++)
+                    {
+                        if (i == designs.Count - 1)
+                        {
+                            <span class="value">@designs[i].Staff.Name</span>
+                        }
+                        else
+                        {
+                            <span class="value">@designs[i].Staff.Name, </span>
+                        }
+
+                    }
+                </div>
+            }
+            
+            @{
+                List<FilmStaff> composers = Model.filmStaffs["Composers"];
+            }
+            @if (composers.Count > 0)
+            {
+                <div class="partInfo">
+                    <span class="name">Композиторы: </span>
+                    @for (int i = 0; i < composers.Count; i++)
+                    {
+                        if (i == composers.Count - 1)
+                        {
+                            <span class="value">@composers[i].Staff.Name</span>
+                        }
+                        else
+                        {
+                            <span class="value">@composers[i].Staff.Name, </span>
+                        }
+
+                    }
+                </div>
+            }
+            
+            @{
+                List<FilmStaff> operators = Model.filmStaffs["Operators"];
+            }
+            @if (operators.Count > 0)
+            {
+                <div class="partInfo">
+                    <span class="name">Операторы: </span>
+                    @for (int i = 0; i < operators.Count; i++)
+                    {
+                        if (i == composers.Count - 1)
+                        {
+                            <span class="value">@operators[i].Staff.Name</span>
+                        }
+                        else
+                        {
+                            <span class="value">@operators[i].Staff.Name, </span>
+                        }
+
+                    }
+                </div>
+            }
+            
+            @{
+                List<FilmStaff> writers = Model.filmStaffs["Writers"];
+            }
+            @if (writers.Count > 0)
+            {
+                <div class="partInfo">
+                    <span class="name">Сценаристы: </span>
+                    @for (int i = 0; i < writers.Count; i++)
+                    {
+                        if (i == writers.Count - 1)
+                        {
+                            <span class="value">@writers[i].Staff.Name</span>
+                        }
+                        else
+                        {
+                            <span class="value">@writers[i].Staff.Name, </span>
+                        }
+
+                    }
+                </div>
+            }
+           
+            @{
+                List<FilmStaff> producers = Model.filmStaffs["Producers"];
+            }
+            @if (producers.Count > 0)
+            {
+                <div class="partInfo">
+                    <span class="name">Продюсеры: </span>
+                    @for (int i = 0; i < producers.Count; i++)
+                    {
+                        if (i == producers.Count - 1)
+                        {
+                            <span class="value">@producers[i].Staff.Name</span>
+                        }
+                        else
+                        {
+                            <span class="value">@producers[i].Staff.Name, </span>
+                        }
+
+                    }
+                </div>
+            }
+            
+            @{
+                List<FilmStaff> editors = Model.filmStaffs["Editors"];
+            }
+            @if (editors.Count > 0)
+            {
+                <div class="partInfo">
+                    <span class="name">Монтажеры: </span>
+                    @for (int i = 0; i < editors.Count; i++)
+                    {
+                        if (i == editors.Count - 1)
+                        {
+                            <span class="value">@editors[i].Staff.Name</span>
+                        }
+                        else
+                        {
+                            <span class="value">@editors[i].Staff.Name, </span>
+                        }
+
+                    }
+                </div>
+            }
+            
         </div>
     </div>
     <div class="description">@Html.Raw(Model.film.Description)</div>
 
+    @if (Model.screenshots != null && Model.screenshots.Length > 1)
+    {
+        <h2>Кадры из фильма</h2>
+        <div id="carouselScreenshots" class="owl-carousel">
+            @for (int i = 0; i < @Model.screenshots.Length - 1; i++)
+            {
+                <img src="@Model.screenshots[i]" />
+            }
+        </div>
+    }
 </section>
 
 <section class="playerSection">
@@ -164,26 +369,10 @@
 
     <script src="https://kinobox.tv/kinobox.min.js"></script>
     <script>new Kinobox('.kinobox_player', { search: { kinopoisk: '@Model.film.KinopoiskId' } }).init();</script>
-    @* <script>new Kinobox('.kinobox_player', { search: { kinopoisk: '1263399' } }).init();</script> *@
 
-    @*     <script src="~/js/detail.js"></script>
+        <script src="~/js/detail.js"></script>
     <script>
         $(document).ready(function () {
-            $("#carouselFranchise").owlCarousel({
-                margin: 20,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 3
-                    }
-                },
-                autoWidth: true
-            });
             $("#carouselScreenshots").owlCarousel({
                 margin: 20,
                 autoplay: true,
@@ -201,13 +390,7 @@
                 },
                 autoplayHoverPause: true
             });
-            $("#carouselSeries").owlCarousel({
-                autoWidth: true,
-                margin: 8
-            });
-            var achievements = @Html.Raw(JsonConvert.SerializeObject(Model.achievements));
-
-            initializate('@Model.Film.KodikUrl', @lastTranslation, @Model.Film.MaxEpisodes, @Model.Film.Id, '@Model.Film.Status', achievements);
+            
         });
-    </script> *@
+    </script>
 }

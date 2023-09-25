@@ -8,6 +8,7 @@
         public string Date { get; set; }
         public string BackImgUrl { get; set; }
         public bool IsInteresting { get; set; }
+        public string Type { get; set; } = "Film";
 
         public int UserId { get; set; }
         public User User { get; set; }

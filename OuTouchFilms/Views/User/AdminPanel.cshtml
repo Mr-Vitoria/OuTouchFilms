@@ -9,16 +9,22 @@
 
         <section class="mainCommandsSection">
             <h2>Основные команды(С возможностью ввода)</h2>
-            @* <form class="inputForm" asp-action="AddFilmByTitle" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
-                <h3>Добавить аниме по названию:</h3>
+            <form class="inputForm" asp-action="AddFilmByTitle" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
+                <h3>Добавить фильм по названию:</h3>
                 <input name="title" type="text" placeholder="Название" required />
                 <button type="submit">Добавить</button>
             </form>
-            <form class="inputForm" asp-action="AddFilmBySeason" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
+            <form class="inputForm" asp-action="AddFilmById" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
+                <h3>Добавить фильм по id кинопоиска:</h3>
+                <input name="id" type="number" placeholder="Id кинопоиска" required />
+                <button type="submit">Добавить</button>
+            </form>
+            @*<form class="inputForm" asp-action="AddFilmBySeason" asp-controller="Films" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
                 <h3>Добавить аниме по сезону:</h3>
                 <input name="title" type="text" placeholder="Сезон" title="Формат: summer_2016" required />
                 <button type="submit">Добавить</button>
             </form>
+
  *@
 
             <h2>Основные команды(Без возможности ввода)</h2>
@@ -47,6 +53,12 @@
                 <input id="title" name="title" type="text" required />
                 <label for="backImg">Ссылка на фоновое изображение</label>
                 <input id="backImg" name="backImg" type="url" />
+
+                <label for="type">Тип новости</label>
+                <select id="type" name="type">
+                    <option value="Common">Общие</option>
+                    <option value="Film">Только для фильмов</option>
+                </select>
 
                 <label for="text">Содержание поста:</label>
                 <div class="textAreaContainer">

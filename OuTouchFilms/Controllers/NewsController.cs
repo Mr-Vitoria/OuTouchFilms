@@ -8,13 +8,14 @@ namespace OuTouchFilms.Controllers
     public class NewsController : Controller
     {
         private readonly OuTouchDbContext context;
-        //private readonly IMailService mailService;
+        private readonly IMailService mailService;
         private readonly INewsService newsService;
 
-        public NewsController(OuTouchDbContext context, INewsService newsService)
+        public NewsController(OuTouchDbContext context, INewsService newsService, IMailService mailService)
         {
             this.context = context;
             this.newsService = newsService;
+            this.mailService = mailService;
         }
 
         public async Task<IActionResult> NewsDetail(int newsId, string lastUrl)
@@ -27,7 +28,7 @@ namespace OuTouchFilms.Controllers
             });
         }
 
-        public async Task<IActionResult> AddNews(string title, string text, string backImg="", string lastUrl = "/")
+        public async Task<IActionResult> AddNews(string title, string text, string type, string backImg="", string lastUrl = "/")
         {
             if (HttpContext.Request.Cookies.ContainsKey("id"))
             {
@@ -39,12 +40,20 @@ namespace OuTouchFilms.Controllers
                     Text = text,
                     UserId = userId,
                     BackImgUrl = backImg,
-                    Date = DateTime.Now.ToString("dd.MM.yyyy")
+                    Date = DateTime.Now.ToString("dd.MM.yyyy"), 
+                    Type = type
                 };
 
                 await context.News.AddAsync(news);
 
                 await context.SaveChangesAsync();
+
+
+                List<User> users = await context.Users.ToListAsync();
+                for (int i = 0; i < users.Count; i++)
+                {
+                    await mailService.NewPostLetter(news, users[i].Login, users[i].Email);
+                }
             }
 
             

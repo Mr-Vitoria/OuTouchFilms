@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using OuTouchFilms.Models;
@@ -11,9 +12,11 @@ using OuTouchFilms.Models;
 namespace OuTouchFilms.Migrations
 {
     [DbContext(typeof(OuTouchDbContext))]
-    partial class OuTouchDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230923164456_AddDirectorsInFilm")]
+    partial class AddDirectorsInFilm
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,9 +110,6 @@ namespace OuTouchFilms.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("ProducerIds")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Screenshots")
                         .HasColumnType("text");
 
                     b.Property<string>("Slogan")
@@ -234,10 +234,6 @@ namespace OuTouchFilms.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("text");
 

@@ -16,17 +16,17 @@ namespace OuTouchFilms.Services
             await context.Users.LoadAsync();
             if(count == -1)
             {
-                return await context.News.OrderByDescending(news => news.Id).ToListAsync();
+                return await context.News.Where(n => n.Type == "Common" || n.Type == "Film").OrderByDescending(news => news.Id).ToListAsync();
             }
 
-            return await context.News.OrderByDescending(news => news.Id).Take(count).ToListAsync();
+            return await context.News.Where(n => n.Type == "Common" || n.Type == "Film").OrderByDescending(news => news.Id).Take(count).ToListAsync();
         }
         public async Task<List<News>> getInterestingNews()
         {
 
             await context.Users.LoadAsync();
 
-            return await context.News.Where(news => news.IsInteresting == true).ToListAsync();
+            return await context.News.Where(n => n.Type == "Common" || n.Type == "Film").Where(news => news.IsInteresting == true).ToListAsync();
         }
     }
 }

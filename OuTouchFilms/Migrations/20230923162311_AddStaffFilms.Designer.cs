@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using OuTouchFilms.Models;
@@ -11,9 +12,11 @@ using OuTouchFilms.Models;
 namespace OuTouchFilms.Migrations
 {
     [DbContext(typeof(OuTouchDbContext))]
-    partial class OuTouchDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230923162311_AddStaffFilms")]
+    partial class AddStaffFilms
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,13 +50,13 @@ namespace OuTouchFilms.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ActorIds")
+                    b.Property<string>("Actors")
                         .HasColumnType("text");
 
                     b.Property<string>("Annotation")
                         .HasColumnType("text");
 
-                    b.Property<string>("ComposerIds")
+                    b.Property<string>("Composers")
                         .HasColumnType("text");
 
                     b.Property<string>("Countries")
@@ -66,16 +69,13 @@ namespace OuTouchFilms.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
-                    b.Property<string>("DesignIds")
-                        .HasColumnType("text");
-
-                    b.Property<string>("DirectorIds")
+                    b.Property<string>("Designs")
                         .HasColumnType("text");
 
                     b.Property<string>("Duration")
                         .HasColumnType("text");
 
-                    b.Property<string>("EditorIds")
+                    b.Property<string>("Editors")
                         .HasColumnType("text");
 
                     b.Property<string>("Genres")
@@ -97,7 +97,7 @@ namespace OuTouchFilms.Migrations
                     b.Property<string>("LastUpdate")
                         .HasColumnType("text");
 
-                    b.Property<string>("OperatorIds")
+                    b.Property<string>("Operators")
                         .HasColumnType("text");
 
                     b.Property<string>("OriginalTitle")
@@ -106,10 +106,7 @@ namespace OuTouchFilms.Migrations
                     b.Property<string>("Poster")
                         .HasColumnType("text");
 
-                    b.Property<string>("ProducerIds")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Screenshots")
+                    b.Property<string>("Producers")
                         .HasColumnType("text");
 
                     b.Property<string>("Slogan")
@@ -125,7 +122,7 @@ namespace OuTouchFilms.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("WriterIds")
+                    b.Property<string>("Writers")
                         .HasColumnType("text");
 
                     b.Property<int>("Year")
@@ -237,10 +234,6 @@ namespace OuTouchFilms.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
@@ -263,12 +256,9 @@ namespace OuTouchFilms.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Poster")
+                    b.Property<string>("SwaggerId")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<int>("SwaggerId")
-                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

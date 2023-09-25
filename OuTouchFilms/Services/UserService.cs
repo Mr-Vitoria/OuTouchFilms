@@ -29,7 +29,7 @@ namespace OuTouchFilms.Services
             {
                 return false;
             }
-            user.ImgUrl = "https://outouch.ru/images/NoImageProfile.png";
+            user.ImgUrl = "http://outouch.ru/images/NoImageProfile.png";
             await context.Users.AddAsync(user);
             await context.SaveChangesAsync();
 

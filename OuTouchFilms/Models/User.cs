@@ -16,6 +16,8 @@
             {
                 case "Admin_BL":
                     return 10;
+                case "Bluepuper":
+                    return 9;
                 case "GDMC":
                     return 8;
                 case "SubAdmin":

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using OuTouchFilms.Models;
@@ -11,9 +12,11 @@ using OuTouchFilms.Models;
 namespace OuTouchFilms.Migrations
 {
     [DbContext(typeof(OuTouchDbContext))]
-    partial class OuTouchDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230923163336_AddStaffsTable")]
+    partial class AddStaffsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,9 +72,6 @@ namespace OuTouchFilms.Migrations
                     b.Property<string>("DesignIds")
                         .HasColumnType("text");
 
-                    b.Property<string>("DirectorIds")
-                        .HasColumnType("text");
-
                     b.Property<string>("Duration")
                         .HasColumnType("text");
 
@@ -107,9 +107,6 @@ namespace OuTouchFilms.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("ProducerIds")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Screenshots")
                         .HasColumnType("text");
 
                     b.Property<string>("Slogan")
@@ -234,10 +231,6 @@ namespace OuTouchFilms.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("text");
 

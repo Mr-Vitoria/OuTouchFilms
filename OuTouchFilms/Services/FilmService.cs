@@ -3,6 +3,8 @@ using Newtonsoft.Json;
 using OuTouchFilms.Models;
 using System.Globalization;
 using System.Net;
+using System.Net.Http;
+using System.Reflection.PortableExecutable;
 
 namespace OuTouchFilms.Services
 {
@@ -273,12 +275,295 @@ namespace OuTouchFilms.Services
             return new
             {
                 film = filmDb,
+                filmStaffs = await filmDb.GetStaffs(context),
                 genres = await filmDb.GetGenres(context),
+                countries = await filmDb.GetCountries(context),
+                screenshots = filmDb.GetScreenshots(),
                 filmComments = await context.FilmComments.Where(comm => comm.FilmId == filmDb.Id).ToListAsync(),
                 userType = type,
                 accountImportant = accountImportant
             };
         }
 
+
+        public async Task<bool> AddFilmsByTitle(string title)
+        {
+            var urlSwagger = "https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=" + title + "&page=1";
+            HttpClient httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("X-API-KEY", "038f49e8-10f0-495e-a44d-845920b960d9");
+            httpClient.DefaultRequestHeaders.Add("accept", "application/json");
+            HttpResponseMessage httpResponseMessage = await httpClient.GetAsync(urlSwagger);
+            Stream responseStream = httpResponseMessage.Content.ReadAsStream();
+            StreamReader reader = new StreamReader(responseStream);
+
+            dynamic filmsArray = (dynamic)JsonConvert.DeserializeObject(reader.ReadToEnd());
+            for (int i = 0; i < filmsArray.films.Count; i++)
+            {
+                dynamic filmJson = filmsArray.films[i];
+
+                var urlVideo = "https://kinobox.tv/api/players/main?kinopoisk=" + filmJson.filmId;
+                HttpClient httpClientVideo = new HttpClient();
+                httpClientVideo.DefaultRequestHeaders.Add("accept", "application/json");
+                HttpResponseMessage httpResponseMessageVideo = await httpClientVideo.GetAsync(urlVideo);
+                StreamReader readerVideo = new StreamReader(httpResponseMessageVideo.Content.ReadAsStream());
+
+                dynamic filmsVideo = (dynamic)JsonConvert.DeserializeObject(readerVideo.ReadToEnd());
+                if (filmsVideo.Count <= 0)
+                {
+                    continue;
+                }
+                await AddFilmsById((int)filmJson.filmId);
+            }
+
+            return true;
+        }        
+        
+        public async Task<bool> AddFilmsById(int id)
+        {
+            var urlSwagger = "https://kinopoiskapiunofficial.tech/api/v2.2/films/" + id;
+            HttpClient httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("X-API-KEY", "038f49e8-10f0-495e-a44d-845920b960d9");
+            httpClient.DefaultRequestHeaders.Add("accept", "application/json");
+            HttpResponseMessage httpResponseMessage = await httpClient.GetAsync(urlSwagger);
+            Stream responseStream = httpResponseMessage.Content.ReadAsStream();
+            StreamReader reader = new StreamReader(responseStream);
+
+            dynamic filmJson = (dynamic)JsonConvert.DeserializeObject(reader.ReadToEnd());
+            
+            return await AddFilmsByJson(filmJson);
+        }
+
+        public async Task<bool> AddFilmsByJson(dynamic filmJson, bool isNeedCheck = true)
+        {
+            int kinopoiskId = filmJson.kinopoiskId;
+
+            if (await context.Films.FirstOrDefaultAsync(f => f.KinopoiskId == kinopoiskId) != null)
+            {
+                return false;
+            }
+
+            if (isNeedCheck)
+            {
+                var urlVideo = "https://kinobox.tv/api/players/main?kinopoisk=" + kinopoiskId;
+                HttpClient httpClientVideo = new HttpClient();
+                httpClientVideo.DefaultRequestHeaders.Add("accept", "application/json");
+                HttpResponseMessage httpResponseMessageVideo = await httpClientVideo.GetAsync(urlVideo);
+                StreamReader readerVideo = new StreamReader(httpResponseMessageVideo.Content.ReadAsStream());
+
+                dynamic filmsVideo = (dynamic)JsonConvert.DeserializeObject(readerVideo.ReadToEnd());
+                if (filmsVideo.Count<=0)
+                {
+                    return false;
+                }
+            }
+            Film film = new Film();
+
+            film.KinopoiskId = kinopoiskId;
+
+            film.Title = filmJson.nameRu;
+            film.OriginalTitle = filmJson.nameOriginal == null ? filmJson.nameOriginal : filmJson.nameEn;
+            film.Description = filmJson.description;
+
+
+            List<Country> countries = await context.Countries.ToListAsync();
+            for (int j = 0; j < filmJson.countries.Count; j++)
+            {
+                string country = filmJson.countries[j].country;
+
+                Country filmCountry = countries.FirstOrDefault(c => c.Name == country);
+                if (filmCountry == null)
+                {
+                    filmCountry = new Country();
+                    filmCountry.Name = country;
+                    await context.Countries.AddAsync(filmCountry);
+                    await context.SaveChangesAsync();
+                    countries.Add(filmCountry);
+                }
+
+                film.Countries += filmCountry.Id + ";";
+            }
+
+
+            List<FilmGenre> genres = await context.FilmGenres.ToListAsync();
+            for (int j = 0; j < filmJson.genres.Count; j++)
+            {
+                string genre = filmJson.genres[j].genre;
+                genre = genre.Substring(0, 1).ToUpper() + genre.Substring(1);
+
+                FilmGenre filmGenre = genres.FirstOrDefault(g => g.Title == genre);
+                if (filmGenre == null)
+                {
+                    filmGenre = new FilmGenre();
+                    filmGenre.Title = genre;
+                    await context.FilmGenres.AddAsync(filmGenre);
+                    await context.SaveChangesAsync();
+                    genres.Add(filmGenre);
+                }
+
+                film.Genres += filmGenre.Id + ";";
+            }
+
+
+            float rating = 0.0f;
+            string ratingString = filmJson.ratingKinopoisk + "";
+            float.TryParse(ratingString, out rating);
+
+            film.KinopoiskRating = rating;
+            string type = filmJson.type;
+
+            switch (type)
+            {
+                case "TV_SERIES":
+                    type = "Сериал";
+                    break;
+                case "FILM":
+                    type = "Фильм";
+                    break;
+                case "VIDEO":
+                    type = "Видео";
+                    break;
+                case "MINI_SERIES":
+                    type = "Мини сериал";
+                    break;
+                default:
+                    break;
+            }
+            film.Type = type;
+            int year = 0;
+            string yearString = filmJson.year + "";
+            int.TryParse(yearString, out year);
+            film.Year =year;
+
+            film.Poster = filmJson.posterUrl;
+            film.Duration = filmJson.filmLength;
+
+            film.Slogan = filmJson.slogan;
+            film.Annotation = filmJson.editorAnnotation;
+            film.LastUpdate = filmJson.lastSync;
+
+
+
+            await context.Films.AddAsync(film);
+            await context.SaveChangesAsync();
+
+            return true;
+        }
+        public async Task<bool> AddFullFilmsInformation(int id)
+        {
+            Film film = await context.Films.FindAsync(id);
+
+            if(film == null)
+            {
+                return false;
+            }
+
+            var staffInformationUrl = "https://kinopoiskapiunofficial.tech/api/v1/staff?filmId=" + film.KinopoiskId;
+            HttpClient httpClientstaffInformation = new HttpClient();
+            httpClientstaffInformation.DefaultRequestHeaders.Add("accept", "application/json");
+            httpClientstaffInformation.DefaultRequestHeaders.Add("X-API-KEY", "038f49e8-10f0-495e-a44d-845920b960d9");
+            HttpResponseMessage httpResponseMessagestaffInformation = await httpClientstaffInformation.GetAsync(staffInformationUrl);
+            StreamReader readerstaffInformation = new StreamReader(httpResponseMessagestaffInformation.Content.ReadAsStream());
+            dynamic staffArray = (dynamic)JsonConvert.DeserializeObject(readerstaffInformation.ReadToEnd());
+
+            film.EditorIds = "";
+            film.DesignIds = "";
+            film.ComposerIds = "";
+            film.OperatorIds = "";
+            film.WriterIds = "";
+            film.ProducerIds = "";
+            film.ActorIds = "";
+            for (int i = 0; i < staffArray.Count; i++)
+            {
+                int staffId = staffArray[i].staffId;
+                Staff staff = await context.Staffs.FirstOrDefaultAsync(st => st.SwaggerId == staffId);
+                if(staff == null)
+                {
+                    staff = new Staff()
+                    {
+                        Name = staffArray[i].nameRu == "" ? staffArray[i].nameEn : staffArray[i].nameRu,
+                        Poster = staffArray[i].posterUrl,
+                        SwaggerId = staffId
+                    };
+
+                    await context.Staffs.AddAsync(staff);
+                    await context.SaveChangesAsync();
+                }
+
+                FilmStaff filmStaff = await context.FilmStaffs.FirstOrDefaultAsync(fs => fs.StaffId == staff.Id && fs.FilmId == film.Id);
+
+                if(filmStaff == null)
+                {
+                    string description = staffArray[i].description;
+                    
+                    if(description!=null)
+                        description = description.Substring(0, 1).ToUpper() + description.Substring(1);
+                    
+                    
+                    filmStaff = new FilmStaff()
+                    {
+                        Profession = staffArray[i].professionText,
+                        Description = description,
+                        FilmId = film.Id,
+                        StaffId = staff.Id
+                    };
+
+                    await context.FilmStaffs.AddAsync(filmStaff);
+                    await context.SaveChangesAsync();
+                }
+
+                switch (filmStaff.Profession)
+                {
+                    case "Режиссеры":
+                        film.DirectorIds += filmStaff.Id + ";";
+                        break;
+                    case "Актеры":
+                        film.ActorIds += filmStaff.Id + ";";
+                        break;
+                    case "Монтажеры":
+                        film.EditorIds += filmStaff.Id + ";";
+                        break;
+                    case "Художники":
+                        film.DesignIds += filmStaff.Id + ";";
+                        break;
+                    case "Композиторы":
+                        film.ComposerIds += filmStaff.Id + ";";
+                        break;
+                    case "Операторы":
+                        film.OperatorIds += filmStaff.Id + ";";
+                        break;
+                    case "Сценаристы":
+                        film.WriterIds += filmStaff.Id + ";";
+                        break;
+                    case "Продюсеры":
+                        film.ProducerIds += filmStaff.Id + ";";
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            film = await AddFilmScreenshots(film);
+            context.Films.Update(film);
+            await context.SaveChangesAsync();
+            return true;
+        }
+        public async Task<Film> AddFilmScreenshots(Film film)
+        {
+            var screenInformationUrl = "https://kinopoiskapiunofficial.tech/api/v2.2/films/"+ film.KinopoiskId + "/images?type=STILL&page=1";
+            HttpClient httpClientScreenInformation = new HttpClient();
+            httpClientScreenInformation.DefaultRequestHeaders.Add("accept", "application/json");
+            httpClientScreenInformation.DefaultRequestHeaders.Add("X-API-KEY", "038f49e8-10f0-495e-a44d-845920b960d9");
+            HttpResponseMessage httpResponseMessageScreenInformation = await httpClientScreenInformation.GetAsync(screenInformationUrl);
+            StreamReader readerScreenInformation = new StreamReader(httpResponseMessageScreenInformation.Content.ReadAsStream());
+            dynamic screenArray = (dynamic)JsonConvert.DeserializeObject(readerScreenInformation.ReadToEnd());
+
+            film.Screenshots = "";
+            for (int i = 0; i < screenArray.items.Count&&i<10; i++)
+            {
+                film.Screenshots += screenArray.items[i].imageUrl + ";";
+
+            }
+            return film;
+        }
     }
 }

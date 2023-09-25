@@ -1,7 +1,7 @@
 ﻿@{
     string theme = "gray";
     string logoPath = "images/system/Logo.png";
-    string backImgPath = "images/system/backGray.png";
+    string backImgPath = "images/system/background.jpg";
     if (Context.Request.Cookies.ContainsKey("themeProject"))
     {
         theme = Context.Request.Cookies["themeProject"];
@@ -10,7 +10,7 @@
         {
             case "white":
                 logoPath = "images/system/logoBlack.png";
-                backImgPath = "images/system/backWhite.png";
+                backImgPath = "images/system/background.jpg";
                 break;
         }
     }
@@ -83,7 +83,7 @@
 
             <div class="linksContainer">
                 <a asp-area="" asp-controller="Films" asp-action="filmList">Фильмы</a>
-                <a asp-area="" asp-controller="Films" asp-action="AddRandomFilm">Случайный фильм</a>
+                <a asp-area="" asp-controller="Films" asp-action="GetRandomFilm">Случайный фильм</a>
             </div>
 
             <form class="searchForm" asp-action="Search" asp-controller="Films" method="get">
@@ -111,7 +111,6 @@
             }
             else
             {
-
                 <a class="profileHref" asp-action="Profile" asp-controller="User">Профиль</a>
             }
 
@@ -134,10 +133,32 @@
     <footer>
         <div class="footerContainer">
             <div class="hrefContainer">
+                <h3>OuTouch Films</h3>
+                <a asp-action="Index" asp-controller="Films">Главная</a>
+                <a asp-action="FilmList" asp-controller="Films">Список фильмов</a>
+                <a asp-action="GetRandomFilm" asp-controller="Films">Случайный фильм</a>
+                <a asp-action="Profile" asp-controller="User">Профиль</a>
                 <a asp-action="FAQ" asp-controller="News">FAQ</a>
             </div>
-            <span class="copyright">&copy; 2023 - OuTouch</span>
+
+            <div class="hrefContainer">
+                <h3>OuTouch</h3>
+                <a href="http://outouch.somee.com/">Главная</a>
+                <a href="http://outouch.somee.com/chill.html">Чилл</a>
+                <a href="http://outouch.somee.com/developing.html">Игры</a>
+                <a href="http://outouch.somee.com/developing.html">Форум</a>
+            </div>
+
+            <div class="hrefContainer">
+                <h3>OuTouch Anime</h3>
+                <a href="http://outouch.ru/">Главная</a>
+                <a href="http://outouch.ru/Anime/AnimeList">Список аниме</a>
+                <a href="http://outouch.ru/Anime/GetRandomAnime/">Случайное аниме</a>
+                <a href="http://outouch.ru/User/Profile">Профиль</a>
+                <a href="http://outouch.ru/News/FAQ">FAQ</a>
+            </div>
         </div>
+        <p class="copyright">&copy; 2023 - OuTouch</p>
     </footer>
 
 
