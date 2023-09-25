@@ -95,6 +95,10 @@ footer {
     min-height: 100px;
 }
 
+footer .hrefContainer a{
+    color:black;
+}
+
     footer .copyright {
         color: black;
         border-color: black;
@@ -202,7 +206,7 @@ footer {
 .profileSection a:hover {
     color: darkgrey;
 }
-.userAnimesSection button:hover {
+.userFilmsSection button:hover {
     background-color: transparent;
     color: gray;
 }

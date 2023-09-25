@@ -218,7 +218,7 @@ namespace OuTouchFilms.Controllers
 
         }
 
-        public async Task<bool> ChangeUsersAnimeFromJs(int userId, int filmId, TypeOfUserFilm typeFilmUser)
+        public async Task<bool> ChangeUsersFilmFromJs(int userId, int filmId, TypeOfUserFilm typeFilmUser)
         {
             UserFilms userFilm = await context.UserFilms.FirstOrDefaultAsync(f => f.UserId == userId && f.FilmId == filmId);
             Film film = await context.Films.FindAsync(filmId);

@@ -6,32 +6,32 @@ let endSearch = true;
 let searchForms = document.getElementsByClassName("searchForm");
 
 for (var i = 0; i < searchForms.length; i++) {
-    let titleAnime = searchForms[i].getElementsByClassName("title")[0];
+    let titleFilm = searchForms[i].getElementsByClassName("title")[0];
     let helpSearch = searchForms[i].getElementsByClassName("helpSearch")[0];
-    let allAnimesHref = searchForms[i].getElementsByClassName("allFilms")[0];
+    let allFilmsHref = searchForms[i].getElementsByClassName("allFilms")[0];
 
-    titleAnime.addEventListener("input", (event) => {
+    titleFilm.addEventListener("input", (event) => {
         let title = event.target.value;
         if (title.length >= 3) {
             if (!endSearch) {
                 abortSearch();
             }
             beginSearch(event.target.value, helpSearch);
-            allAnimesHref.href = window.location.origin + '/Films/Search/?title=' + title;
-            allAnimesHref.classList.remove("d-none");
+            allFilmsHref.href = window.location.origin + '/Films/Search/?title=' + title;
+            allFilmsHref.classList.remove("d-none");
         }
         else {
             helpSearch.getElementsByClassName("filmList")[0].innerHTML = "";
-            allAnimesHref.classList.add("d-none");
+            allFilmsHref.classList.add("d-none");
         }
     });
 
-    titleAnime.addEventListener("focus", (event) => {
+    titleFilm.addEventListener("focus", (event) => {
         helpSearch.classList.remove("d-none");
     });
 
 
-    titleAnime.addEventListener("blur", (event) => {
+    titleFilm.addEventListener("blur", (event) => {
         document.addEventListener("click", onBlurInput);
         function onBlurInput(event) {
             console.log(event);

@@ -1,7 +1,7 @@
 ﻿@{
     string theme = "gray";
     string logoPath = "images/system/Logo.png";
-    string backImgPath = "images/system/backGray.png";
+    string backImgPath = "images/system/background.jpg";
     if (Context.Request.Cookies.ContainsKey("themeProject"))
     {
         theme = Context.Request.Cookies["themeProject"];
@@ -10,7 +10,7 @@
         {
             case "white":
                 logoPath = "images/system/logoBlack.png";
-                backImgPath = "images/system/backWhite.png";
+                backImgPath = "images/system/background.jpg";
                 break;
         }
     }
@@ -143,10 +143,10 @@
 
             <div class="hrefContainer">
                 <h3>OuTouch</h3>
-                <a href="#">Главная</a>
-                <a href="#">Чилл</a>
-                <a href="#">Игры</a>
-                <a href="#">Форум</a>
+                <a href="http://outouch.somee.com/">Главная</a>
+                <a href="http://outouch.somee.com/chill.html">Чилл</a>
+                <a href="http://outouch.somee.com/developing.html">Игры</a>
+                <a href="http://outouch.somee.com/developing.html">Форум</a>
             </div>
 
             <div class="hrefContainer">

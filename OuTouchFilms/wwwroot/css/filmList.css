@@ -16,6 +16,8 @@ section {
     width: 25%;
     margin-right: 50px;
     height: fit-content;
+    position:sticky;
+    top:50px;
 }
 
 button {
@@ -63,9 +65,11 @@ button {
 
 @media(max-width:1470px){
     .filmListSection,
-    .searchFilmSection{
-        width:80%;
+    .searchFilmSection {
+        width: 80%;
         margin: 25px 0;
+        position: relative;
+        top:0;
     }
         .searchFilmSection .listContainer .checkBoxContainer {
             width: 32%;
