@@ -7,10 +7,12 @@ namespace OuTouchFilms.Controllers
     public class UserController : Controller
     {
         private readonly IUserService userService;
+        private readonly IMailService mailService;
 
-        public UserController(IUserService userService)
+        public UserController(IUserService userService, IMailService mailService)
         {
             this.userService = userService;
+            this.mailService = mailService;
         }
 
         [HttpGet]
@@ -34,6 +36,7 @@ namespace OuTouchFilms.Controllers
                 });
             }
 
+            await mailService.RegistrationLetter(user);
             return RedirectToAction("Index", "Films");
         }
 
