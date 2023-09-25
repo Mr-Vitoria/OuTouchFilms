@@ -50,9 +50,9 @@ namespace OuTouchFilms.Models
         {
             List<Country> allCountries = await context.Countries.ToListAsync();
             string[] countriesId = Countries.Split(";");
-            string[] countries = new string[countriesId.Length - 1];
+            string[] countries = new string[countriesId.Length];
 
-            for (int i = 0; i < countries.Length; i++)
+            for (int i = 0; i < countries.Length - 1; i++)
             {
                 countries[i] = allCountries.FirstOrDefault(g => g.Id == int.Parse(countriesId[i])).Name;
             }

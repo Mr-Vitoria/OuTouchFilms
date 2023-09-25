@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="~/css/detail.css">
 }
 
+@if (Model.screenshots != null)
+{
+    <img class="backImage" src="@Model.screenshots[0]" />
+}
 <img class="backImage" src="@Model.film.CoverPoster" />
 
 <section class="descriptionSection">
@@ -78,6 +82,49 @@
 
                 }
             </div>
+
+
+            <div class="partInfo">
+                <span class="name">Страна: </span>
+                @for (int i = 0; i < @Model.countries.Length - 1; i++)
+                {
+                    if (i == @Model.countries.Length - 2)
+                    {
+                        <span class="value">@Model.countries[i]</span>
+                    }
+                    else
+                    {
+                        <span class="value">@Model.countries[i], </span>
+                    }
+
+                }
+            </div>
+
+            @if (@Model.film.Duration != null)
+            {
+                <div class="partInfo">
+                    <span class="name">Продолжительность: </span>
+                    @if (Model.film.Duration.Contains(":"))
+                    {
+                        <span class="value">@Model.film.Duration</span>
+                    }
+                    else
+                    {
+                        <span class="value">@Model.film.Duration мин.</span>
+                    }
+                </div>
+            }
+            <div class="partInfo">
+                <span class="name">Год выхода: </span>
+                <span class="value">@Model.film.Year</span>
+            </div>
+            @if (Model.accountImportant >= 8)
+            {
+                <a asp-area="" asp-controller="Films" asp-action="AddDetailsInformation" asp-route-id="@Model.film.Id" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">Добавить информацию по фильму</a>
+            }
+
+            <hr />
+
             @{
                 List<FilmStaff> actors = Model.filmStaffs["Actors"];
             }
@@ -253,45 +300,6 @@
                 </div>
             }
             
-            <div class="partInfo">
-                <span class="name">Страна: </span>
-                @for (int i = 0; i < @Model.countries.Length - 1; i++)
-                {
-                    if (i == @Model.countries.Length - 2)
-                    {
-                        <span class="value">@Model.countries[i]</span>
-                    }
-                    else
-                    {
-                        <span class="value">@Model.countries[i], </span>
-                    }
-
-                }
-            </div> 
-
-            @if (@Model.film.Duration != null)
-            {
-                <div class="partInfo">
-                    <span class="name">Продолжительность: </span>
-                    @if (Model.film.Duration.Contains(":"))
-                    {
-                        <span class="value">@Model.film.Duration</span>
-                    }
-                    else
-                    {
-                        <span class="value">@Model.film.Duration мин.</span>
-                    }
-                </div>
-            }
-            <div class="partInfo">
-                <span class="name">Год выхода: </span>
-                <span class="value">@Model.film.Year</span>
-            </div>
-            @if (Model.accountImportant >= 8)
-            {
-                <a asp-area="" asp-controller="Films" asp-action="AddDetailsInformation" asp-route-id="@Model.film.Id" asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">Добавить информацию по фильму</a>
-
-            }
         </div>
     </div>
     <div class="description">@Html.Raw(Model.film.Description)</div>
