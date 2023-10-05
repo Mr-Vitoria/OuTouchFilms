@@ -1,4 +1,6 @@
-﻿namespace OuTouchFilms.Models
+﻿using System.Text;
+
+namespace OuTouchFilms.Models
 {
     public class User
     {
@@ -28,6 +30,12 @@
                     return 0;
 
             }
+        }
+        public string EncryptPasswordBase64()
+        {
+            var text = Encoding.UTF8.GetBytes(Password);
+            string encryptText = Convert.ToBase64String(text);
+            return encryptText;
         }
     }
 }

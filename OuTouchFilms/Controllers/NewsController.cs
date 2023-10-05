@@ -40,7 +40,7 @@ namespace OuTouchFilms.Controllers
                     Text = text,
                     UserId = userId,
                     BackImgUrl = backImg,
-                    Date = DateTime.Now.ToString("dd.MM.yyyy"), 
+                    Date = DateTime.Now, 
                     Type = type
                 };
 

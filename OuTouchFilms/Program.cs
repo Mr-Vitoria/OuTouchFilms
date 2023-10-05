@@ -16,7 +16,7 @@ builder.Services.AddDbContext<OuTouchDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("OuTouchDb"), confOptions =>
     {
-        confOptions.SetPostgresVersion(new Version("9.6"));
+        confOptions.SetPostgresVersion(new Version("15.4"));
     });
     //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
@@ -25,6 +25,7 @@ builder.Services.AddDbContext<OuTouchDbContext>(options =>
 
 var app = builder.Build();
 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

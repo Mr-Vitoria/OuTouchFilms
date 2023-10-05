@@ -29,6 +29,7 @@ namespace OuTouchFilms.Services
             {
                 return false;
             }
+            user.Password = user.EncryptPasswordBase64();
             user.ImgUrl = "http://outouch.ru/images/NoImageProfile.png";
             await context.Users.AddAsync(user);
             await context.SaveChangesAsync();
@@ -43,7 +44,7 @@ namespace OuTouchFilms.Services
         {
             var user = await context.Users.FirstOrDefaultAsync(us => us.Email == checkedUser.Email);
             if (user == null ||
-                user.Password != checkedUser.Password)
+                 user.Password != checkedUser.EncryptPasswordBase64())
             {
                 return false;
             }
