@@ -309,6 +309,19 @@ form h2{
         width: 90%;
     }
 }
+@media(max-width:1100px) {
+    .playerSection {
+        padding: 10px;
+    }
+
+    .playerContainer .form-switch {
+        width: fit-content;
+    }
+
+    #filmPlayer {
+        width: 100%;
+    }
+}
 
 @media(max-width:1000px) {
 
@@ -316,6 +329,46 @@ form h2{
         width:80%
     }
 
+}
+
+@media(max-width:700px) {
+
+    form.partInfo {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+        form.partInfo select {
+            margin-top: 20px;
+            width: 60% !important;
+        }
+
+    .mainInfo .imgContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100% !important;
+        /*margin: 0;*/
+    }
+
+        .mainInfo .imgContainer img {
+            width: 45% !important;
+        }
+
+        .mainInfo .imgContainer form {
+            width: 50%;
+        }
+
+        .mainInfo .imgContainer select {
+            font-size: 1.2em;
+        }
+
+        .mainInfo .imgContainer button {
+            font-size: 1.5em;
+        }
 }
 @media(max-width:650px) {
 

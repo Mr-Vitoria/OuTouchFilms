@@ -55,6 +55,7 @@ namespace OuTouchFilms.Controllers
         {
             if (!await userService.CheckUser(user, HttpContext))
             {
+                ViewBag.Message = "Неправильно введен email, либо пароль";
                 return View("Login", new
                 {
                     user = user
@@ -90,9 +91,9 @@ namespace OuTouchFilms.Controllers
 
         }
 
-        public async Task<IActionResult> ChangeImage(string imgUrl)
+        public async Task<IActionResult> ChangeUserProperty(string imgUrl, string emailSend)
         {
-            await userService.ChangeCurrentUserImage(HttpContext, imgUrl);
+            await userService.ChangeCurrentUserProperties(HttpContext, imgUrl, emailSend);
             return RedirectToAction("Profile");
 
         }
@@ -104,33 +105,11 @@ namespace OuTouchFilms.Controllers
             return Redirect(lastUrl);
         }
 
-        public async Task<IActionResult> AdminPanel()
-        {
-            dynamic user = await userService.GetCurrentUserInfo(HttpContext, null);
-            if (user != null && user.user.GetAccountImportant() > 5)
-            {
-                return View(user);
-            }
-            return RedirectToAction("Index", "Films");
-        }
-
         public IActionResult ChangeTheme(string lastUrl)
         {
             userService.ChangeTheme(HttpContext);
 
             return Redirect(lastUrl);
         }
-
-        //public async Task<bool> AddUserAсhievment(int achievmentId, int userId)
-        //{
-        //    return await userService.AddUserAchievment(achievmentId, userId);
-        //}
-
-        //public async Task<IActionResult> AddAchievement(Achievement achievement, string lastUrl)
-        //{
-        //    await userService.AddAchievement(achievement);
-
-        //    return Redirect(lastUrl);
-        //}
     }
 }

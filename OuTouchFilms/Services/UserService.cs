@@ -84,11 +84,20 @@ namespace OuTouchFilms.Services
         }
 
 
-        public async Task<bool> ChangeCurrentUserImage(HttpContext httpContext, string userImg)
+        public async Task<bool> ChangeCurrentUserProperties(HttpContext httpContext, string userImg, string emailSend)
         {
             int id = int.Parse(httpContext.Request.Cookies["id"]);
             var user = await context.Users.FindAsync(id);
             user.ImgUrl = userImg;
+
+            if (emailSend == "on")
+            {
+                user.NeedEmailSend = true;
+            }
+            else
+            {
+                user.NeedEmailSend = false;
+            }
 
             context.Users.Update(user);
             await context.SaveChangesAsync();
@@ -133,41 +142,5 @@ namespace OuTouchFilms.Services
                 httpContext.Response.Cookies.Append("themeProject", "white", cookieOpt);
             }
         }
-
-        //public async Task<bool> AddUserAchievment(int achievementId, int userId)
-        //{
-        //    if((await context.UserAchievments.FirstOrDefaultAsync(ac => ac.AchievementId == achievementId && ac.UserId == userId)) != null)
-        //    {
-        //        return false;
-        //    }
-
-        //    await context.UserAchievments.AddAsync(new UserAchievment() { 
-        //        UserId = userId,
-        //        AchievementId = achievementId
-        //    });
-        //    await context.SaveChangesAsync();
-
-        //    return true;
-        //}
-
-
-        //public async Task<bool> AddAchievement(Achievement achievement)
-        //{
-
-        //    if (await context.Achievements.FirstOrDefaultAsync(ac =>
-        //        ac.Name == achievement.Name || (
-        //        ac.filmId == achievement.filmId &&
-        //        ac.SeriaNumber == achievement.SeriaNumber &&
-        //        ac.SecondsFromStart == achievement.SecondsFromStart)
-        //    ) != null)
-        //    {
-        //        return false;
-        //    }
-
-        //    await context.Achievements.AddAsync(achievement);
-        //    await context.SaveChangesAsync();
-
-        //    return true;
-        //}
     }
 }

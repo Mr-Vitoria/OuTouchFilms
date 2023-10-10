@@ -34,8 +34,10 @@ namespace OuTouchFilms.Models
         public int FilmId { get; set; }
         public int UserId { get; set; }
         public TypeOfUserFilm TypeOfUserFilm { get; set; }
+        public DateOnly AddedDate { get; set; }
 
         public Film Film { get; set; }
         public User User { get; set; }
+
     }
 }

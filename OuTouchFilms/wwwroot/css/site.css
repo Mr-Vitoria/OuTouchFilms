@@ -30,6 +30,19 @@
         border-radius: 5px;
     }
 
+
+.toast {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    margin: 30px;
+    padding: 5px 20px;
+}
+
+    .toast .toast-body {
+        color: white !important;
+    }
 .themeIcon {
     font-size: 2em;
 }
@@ -329,6 +342,7 @@ a {
 .cardHref img {
     width: 100%;
     height: 450px;
+    object-position:center;
 }
 
 .carouselCardHref {
@@ -573,7 +587,6 @@ button {
 
 
 
-
 footer {
     background-color: #292929d6;
     min-height: 200px;
@@ -636,6 +649,7 @@ footer {
 
     section {
         margin: 0;
+        padding-right:50px;
     }
 }
 
@@ -648,6 +662,28 @@ footer {
     .offcanvas {
         width: fit-content !important;
     }
+
+    .fullcard {
+        height: fit-content;
+    }
+
+        .fullcard img {
+            height: 150px !important;
+            width: 150px !important;
+            border-radius: 100%;
+        }
+
+        .fullcard .card {
+            height: fit-content !important;
+            width: 100% !important;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .fullcard .shortDescription {
+            width: 250px;
+            margin: 0;
+        }
 }
 
 @media(max-width:720px) {
@@ -662,6 +698,39 @@ footer {
     .navLinks {
         padding: 0 20px !important;
     }
+
+    footer .footerContainer {
+        flex-direction: column;
+    }
+
+    footer .hrefContainer {
+        max-height: 200px;
+        width: 100%;
+    }
+
+        footer .hrefContainer h3 {
+            height: 200px;
+            vertical-align: central;
+        }
+}
+
+
+@media(max-width:540px) {
+    footer .footerContainer {
+        padding: 20px 10px;
+    }
+
+    footer .hrefContainer {
+        flex-wrap: nowrap;
+        max-height: none;
+        align-items: center;
+        text-align: center;
+    }
+
+        footer .hrefContainer h3 {
+            height: fit-content;
+            margin-top: 40px;
+        }
 }
 
 @media(max-width:400px) {

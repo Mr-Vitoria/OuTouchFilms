@@ -8,14 +8,22 @@
             0: {
                 items: 1
             },
-            600: {
+            750: {
                 items: 2
             },
-            1000: {
+            1040: {
                 items: 3
+            },
+            1375: {
+                items: 4
+            },
+            1700: {
+                items: 5
+            },
+            2050: {
+                items: 6
             }
         },
-        autoWidth: true,
         autoplayHoverPause: true
     });
 });

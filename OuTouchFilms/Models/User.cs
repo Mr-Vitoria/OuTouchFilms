@@ -10,6 +10,7 @@ namespace OuTouchFilms.Models
         public string Login { get; set; }
         public string ImgUrl { get; set; } = "";
         public string TypeAccount { get; set; } = "Обычный";
+        public bool NeedEmailSend { get; set; } = true;
 
 
         public int GetAccountImportant()

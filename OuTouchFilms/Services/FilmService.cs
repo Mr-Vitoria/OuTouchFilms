@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Net;
 using System.Net.Http;
 using System.Reflection.PortableExecutable;
+using System.Xml.Linq;
 
 namespace OuTouchFilms.Services
 {
@@ -283,6 +284,19 @@ namespace OuTouchFilms.Services
                 userType = type,
                 accountImportant = accountImportant
             };
+        }
+
+
+
+        public async Task<List<Film>> GetLastUserFilms(int count, int userId = -1)
+        {
+            User user = await context.Users.FindAsync(userId);
+            if (user == null)
+            {
+                return null;
+            }
+            await context.Films.LoadAsync();
+            return await context.UserFilms.Where(ua => ua.UserId == userId && ua.AddedDate != null).OrderByDescending(ua => ua.AddedDate).Select(us => us.Film).Take(count).ToListAsync();
         }
 
 

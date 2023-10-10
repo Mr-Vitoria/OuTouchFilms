@@ -327,7 +327,7 @@
         <form asp-action="AddComment" asp-controller="User"
               asp-route-filmId="@Model.film.Id"
               asp-route-lastUrl="@(Context.Request.Path+Context.Request.QueryString)">
-            <h2 style="text-align:left; margin-top:50px;">Поделитесь своим мнением о просмотре</h2>
+            <h2 style="text-align:center; margin-top:50px;">Поделитесь своим мнением о просмотре</h2>
             <div class="feedBack">
                 <div class="imgContainer">
                     <img src="@Context.Request.Cookies["image"]" />

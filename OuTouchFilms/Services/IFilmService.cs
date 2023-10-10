@@ -1,4 +1,5 @@
 ﻿using OuTouchFilms.Models;
+using System.Xml.Linq;
 
 namespace OuTouchFilms.Services
 {
@@ -13,10 +14,10 @@ namespace OuTouchFilms.Services
         public Task<object> getAllFilms(int count, int page, string sortBy, string[] genres, int minYear, int maxYear);
         public Task<List<object>> getFilmsByTitle(string title, int count);
         public Task<List<Film>> getMinimalFilmsByTitle(string title, int count);
+        public Task<List<Film>> GetLastUserFilms(int count, int userId = -1);
 
 
         public Task<bool> AddFilmsByTitle(string title);
-        public Task<bool> AddFilmsById(int id);
         public Task<bool> AddFullFilmsInformation(int id);
     }
 }
