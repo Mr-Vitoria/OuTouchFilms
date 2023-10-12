@@ -383,6 +383,10 @@ form h2{
     .owl-carousel .owl-item img{
         height:200px;
     }
+
+    #carouselScreenshots img {
+        height: fit-content;
+    }
 }
 @media(max-width:500px) {
 

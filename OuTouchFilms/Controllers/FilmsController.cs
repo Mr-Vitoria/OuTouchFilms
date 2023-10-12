@@ -35,7 +35,7 @@ namespace OuTouchFilms.Controllers
                 randomFilms = await filmService.getRandomFilms(10),
                 lastFilms = await filmService.getLastFilmsByDate(10),
                 news = await newsService.getLastNews(6),
-                searchModel = await filmService.GetSearchModel(new string[0]),
+                searchModel = await filmService.GetSearchModel(new string[0], new string[0]),
                 userFilms = await filmService.GetLastUserFilms(6, userId)
             });
         }
@@ -98,17 +98,17 @@ namespace OuTouchFilms.Controllers
             
             return films;
         }
-        public async Task<IActionResult> FilmList(string[] genres, int page = 1, string sortBy = "Name", int minYear = -1, int maxYear = -1)
+        public async Task<IActionResult> FilmList(string[] genres,string[] countries, int page = 1, string sortBy = "Name", int minYear = -1, int maxYear = -1)
         {
             //Проверка сервисной инфы
             await ServicesInfoService.AddCountFilmsVisit(context, HttpContext);
 
 
-            var filmsModel = await filmService.getAllFilms(30, page, sortBy, genres, minYear, maxYear);
+            var filmsModel = await filmService.getAllFilms(30, page, sortBy, genres, countries, minYear, maxYear);
             return View(new
             {
                 filmsModel = filmsModel,
-                searchModel = await filmService.GetSearchModel(genres, sortBy, minYear, maxYear)
+                searchModel = await filmService.GetSearchModel(genres, countries, sortBy, minYear, maxYear)
             });
         }
         public async Task<IActionResult> FilmListPagination(string genresJson, int page = 1, string sortBy = "Name", int minYear = -1, int maxYear = -1)

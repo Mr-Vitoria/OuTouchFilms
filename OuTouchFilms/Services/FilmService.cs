@@ -19,17 +19,19 @@ namespace OuTouchFilms.Services
         }
 
 
-        public async Task<object> GetSearchModel(string[] currentGenres, string sortBy = "Name", int currMinYear = -1, int currMaxYear = -1)
+        public async Task<object> GetSearchModel(string[] currentGenres, string[] currentCountries, string sortBy = "Name", int currMinYear = -1, int currMaxYear = -1)
         {
             int minYear = await context.Films.Select(f => f.Year).MinAsync();
             int maxYear = await context.Films.Select(f => f.Year).MaxAsync();
             return new
             {
-                allGenres = await context.FilmGenres.ToListAsync(),
+                allGenres = await context.FilmGenres.OrderBy(fg => fg.Title).ToListAsync(),
+                allCountries = await context.Countries.OrderBy(c => c.Name).ToListAsync(),
                 minYear = minYear,
                 maxYear = maxYear,
                 sortBy = sortBy,
                 currentGenres = currentGenres,
+                currentCountries = currentCountries,
                 currentMinYear = (currMinYear == -1 ? minYear : currMinYear),
                 currentMaxYera = (currMaxYear == -1 ? maxYear : currMaxYear)
             };
@@ -180,13 +182,13 @@ namespace OuTouchFilms.Services
 
             return findFilms;
         }
-        public async Task<object> getAllFilms(int count, int page, string sortBy, string[] genres, int minYear, int maxYear)
+        public async Task<object> getAllFilms(int count, int page, string sortBy, string[] genres, string[] countries, int minYear, int maxYear)
         {
             if (maxYear == -1)
                 maxYear = DateTime.Now.Year;
 
             var films = new List<object>();
-            List<Film> allFilms = await GetFilmBySort(genres,minYear,maxYear);
+            List<Film> allFilms = await GetFilmBySort(genres,countries, minYear,maxYear);
 
             int allFilmsCount = allFilms.Count;
 
@@ -233,13 +235,21 @@ namespace OuTouchFilms.Services
             };
         }
 
-        public async Task<List<Film>> GetFilmBySort(string[] genres, int minYear, int maxYear)
+        public async Task<List<Film>> GetFilmBySort(string[] genres, string[] countries, int minYear, int maxYear)
         {
             var films = await context.Films.ToListAsync();
             if (genres.Count() > 0)
             {
                 films = films.Where(f => genres
                                                 .All(g => f.Genres
+                                                                .Split(';', StringSplitOptions.None)
+                                                                .Contains(g)) == true)
+                                .ToList();
+            }
+            if (countries.Count() > 0)
+            {
+                films = films.Where(f => countries
+                                                .All(g => f.Countries
                                                                 .Split(';', StringSplitOptions.None)
                                                                 .Contains(g)) == true)
                                 .ToList();
@@ -438,6 +448,9 @@ namespace OuTouchFilms.Services
                     break;
                 case "MINI_SERIES":
                     type = "Мини сериал";
+                    break;
+                case "TV_SHOW":
+                    type = "ТВ шоу";
                     break;
                 default:
                     break;

@@ -20,7 +20,7 @@ namespace OuTouchFilms.Models
         public string? Annotation { get; set; }
         public string? Status { get; set; }
         public string Type { get; set; }
-        public string? LastUpdate { get; set; }
+        public DateTime? LastUpdate { get; set; }
         public string Countries { get; set; }
         public string Genres { get; set; }
         public string? Slogan { get; set; }
