@@ -29,7 +29,7 @@ namespace OuTouchFilms.Services
 
             body.Append(text+"</p></td></tr>");
 
-            body.Append("<!--ОКОНЧАНИЕ ПИСЬМА--><tr><td style=\"color: #153643; font-family: sans-serif; font-size: 16px; line-height: 22px;\"><p>С наилучшими пожеланиями, <br /><strong>Администрация сайта OuTouch</strong></p></td></tr><!--/ОКОНЧАНИЕ ПИСЬМА--></table></td></tr><!--Footer--><tr><td class=\"footer\" bgcolor=\"#44525f\" style=\"padding: 20px 30px 15px 30px;\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" style=\"font-family: sans-serif; font-size: 14px; color: #ffffff;\">&reg;All rights reserved<br/><a href=\"http://outouchfilms.somee.com/\" style=\"color: #ffffff; text-decoration: underline;\">OuTouch Films</a></td></tr></table></body></html>");
+            body.Append("<!--ОКОНЧАНИЕ ПИСЬМА--><tr><td style=\"color: #153643; font-family: sans-serif; font-size: 16px; line-height: 22px;\"><p>С наилучшими пожеланиями, <br /><strong>Администрация сайта OuTouch</strong></p></td></tr><!--/ОКОНЧАНИЕ ПИСЬМА--></table></td></tr><!--Footer--><tr><td class=\"footer\" bgcolor=\"#44525f\" style=\"padding: 20px 30px 15px 30px;\"><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td align=\"center\" style=\"font-family: sans-serif; font-size: 14px; color: #ffffff;\">&reg;All rights reserved<br/><a href=\"http://films.outouch.ru\" style=\"color: #ffffff; text-decoration: underline;\">OuTouch Films</a></td></tr></table></body></html>");
 
 
             return body.ToString();

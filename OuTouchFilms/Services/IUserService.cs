@@ -11,5 +11,11 @@ namespace OuTouchFilms.Services
         public Task<object?> GetCurrentUserInfo(HttpContext httpContext, TypeOfUserFilm? TypeOfUserFilm);
         public Task<bool> AddComment(int userId,int filmId,string text);
         public void ChangeTheme(HttpContext httpContext);
+
+        //Validations methods
+
+        public Task<bool> CheckLogin(string login);
+        public Task<bool> CheckEmail(string email);
+        public bool CheckPassword(string password);
     }
 }

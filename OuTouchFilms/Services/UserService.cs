@@ -3,6 +3,7 @@ using OuTouchFilms.Models;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace OuTouchFilms.Services
 {
@@ -25,7 +26,9 @@ namespace OuTouchFilms.Services
 
         public async Task<bool> AddUser(User user, HttpContext httpContext)
         {
-            if (await context.Users.FirstOrDefaultAsync(us => us.Email == user.Email) != null)
+            if (await CheckEmail(user.Email)
+                || await CheckLogin(user.Login)
+                || !CheckPassword(user.Password))
             {
                 return false;
             }
@@ -141,6 +144,22 @@ namespace OuTouchFilms.Services
             {
                 httpContext.Response.Cookies.Append("themeProject", "white", cookieOpt);
             }
+        }
+
+
+        public async Task<bool> CheckLogin(string login)
+        {
+            return (await context.Users.FirstOrDefaultAsync(us => us.Login == login)) != null;
+        }
+
+        public async Task<bool> CheckEmail(string email)
+        {
+            return (await context.Users.FirstOrDefaultAsync(us => us.Email == email)) != null;
+        }
+
+        public bool CheckPassword(string password)
+        {
+            return Regex.IsMatch(password, "^.*(?=.{5,20})(?=.*[a-zA-Z]|[а-яА-Я])(?=.*\\d).*$");
         }
     }
 }

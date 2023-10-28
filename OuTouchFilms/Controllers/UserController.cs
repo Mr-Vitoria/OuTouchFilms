@@ -111,5 +111,18 @@ namespace OuTouchFilms.Controllers
 
             return Redirect(lastUrl);
         }
+
+
+        //Validations methods
+
+        public async Task<bool> CheckLogin(string login)
+        {
+            return await userService.CheckLogin(login);
+        }
+
+        public async Task<bool> CheckEmail(string email)
+        {
+            return await userService.CheckEmail(email);
+        }
     }
 }
