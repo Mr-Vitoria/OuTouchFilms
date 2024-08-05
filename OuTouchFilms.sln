@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.7.34024.191
+VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuTouchFilms", "OuTouchFilms\OuTouchFilms.csproj", "{AC00A230-6B46-45D3-80AF-BE8A8DD45B02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuTouchFilms.Server", "OuTouchFilms.Server\OuTouchFilms.Server.csproj", "{C24426B7-30AA-4C45-B943-393F67685A41}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "outouchfilms.client", "outouchfilms.client\outouchfilms.client.esproj", "{FBBE9F73-DD8F-47F1-9BB7-288885E9D7C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +13,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AC00A230-6B46-45D3-80AF-BE8A8DD45B02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC00A230-6B46-45D3-80AF-BE8A8DD45B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC00A230-6B46-45D3-80AF-BE8A8DD45B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC00A230-6B46-45D3-80AF-BE8A8DD45B02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C24426B7-30AA-4C45-B943-393F67685A41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C24426B7-30AA-4C45-B943-393F67685A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C24426B7-30AA-4C45-B943-393F67685A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C24426B7-30AA-4C45-B943-393F67685A41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBBE9F73-DD8F-47F1-9BB7-288885E9D7C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBBE9F73-DD8F-47F1-9BB7-288885E9D7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBBE9F73-DD8F-47F1-9BB7-288885E9D7C3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FBBE9F73-DD8F-47F1-9BB7-288885E9D7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBBE9F73-DD8F-47F1-9BB7-288885E9D7C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBBE9F73-DD8F-47F1-9BB7-288885E9D7C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4D401785-21DA-473C-85AC-EDF51B345EF2}
+		SolutionGuid = {1EAE3183-18E0-478D-9CA8-CD898A57062C}
 	EndGlobalSection
 EndGlobal

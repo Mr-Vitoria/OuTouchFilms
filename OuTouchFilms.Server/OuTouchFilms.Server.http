@@ -1,0 +1,6 @@
+@OuTouchFilms.Server_HostAddress = http://localhost:5173
+
+GET {{OuTouchFilms.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
