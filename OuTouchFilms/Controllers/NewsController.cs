@@ -20,6 +20,10 @@ namespace OuTouchFilms.Controllers
 
         public async Task<IActionResult> NewsDetail(int newsId, string lastUrl)
         {
+            //Проверка сервисной инфы
+            await ServicesInfoService.AddCountFilmsVisit(context, HttpContext);
+
+
             await context.Users.LoadAsync();
             return View(new
             {
@@ -28,48 +32,22 @@ namespace OuTouchFilms.Controllers
             });
         }
 
-        public async Task<IActionResult> AddNews(string title, string text, string type, string backImg="", string lastUrl = "/")
-        {
-            if (HttpContext.Request.Cookies.ContainsKey("id"))
-            {
-                int userId = int.Parse(HttpContext.Request.Cookies["id"]);
-
-                News news = new News()
-                {
-                    Title = title,
-                    Text = text,
-                    UserId = userId,
-                    BackImgUrl = backImg,
-                    Date = DateTime.Now.ToString("dd.MM.yyyy"), 
-                    Type = type
-                };
-
-                await context.News.AddAsync(news);
-
-                await context.SaveChangesAsync();
-
-
-                List<User> users = await context.Users.ToListAsync();
-                for (int i = 0; i < users.Count; i++)
-                {
-                    await mailService.NewPostLetter(news, users[i].Login, users[i].Email);
-                }
-            }
-
-            
-
-            return Redirect(lastUrl);
-
-        }
-
         public async Task<IActionResult> NewsList()
         {
+            //Проверка сервисной инфы
+            await ServicesInfoService.AddCountFilmsVisit(context, HttpContext);
+
+
             var news = await newsService.getLastNews();
             return View(news);
         }
 
         public async Task<IActionResult> FAQ()
         {
+            //Проверка сервисной инфы
+            await ServicesInfoService.AddCountFilmsVisit(context, HttpContext);
+
+
             return View(await newsService.getInterestingNews());
         }
     }

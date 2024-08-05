@@ -19,5 +19,8 @@ namespace OuTouchFilms.Models
         public DbSet<FilmComment> FilmComments { get; set; }
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<FilmStaff> FilmStaffs { get; set; }
+
+
+        public DbSet<ServicesInfo> ServicesInfo { get; set; }
     }
 }

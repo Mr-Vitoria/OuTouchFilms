@@ -3,6 +3,7 @@ using OuTouchFilms.Models;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace OuTouchFilms.Services
 {
@@ -25,10 +26,13 @@ namespace OuTouchFilms.Services
 
         public async Task<bool> AddUser(User user, HttpContext httpContext)
         {
-            if (await context.Users.FirstOrDefaultAsync(us => us.Email == user.Email) != null)
+            if (await CheckEmail(user.Email)
+                || await CheckLogin(user.Login)
+                || !CheckPassword(user.Password))
             {
                 return false;
             }
+            user.Password = user.EncryptPasswordBase64();
             user.ImgUrl = "http://outouch.ru/images/NoImageProfile.png";
             await context.Users.AddAsync(user);
             await context.SaveChangesAsync();
@@ -43,7 +47,7 @@ namespace OuTouchFilms.Services
         {
             var user = await context.Users.FirstOrDefaultAsync(us => us.Email == checkedUser.Email);
             if (user == null ||
-                user.Password != checkedUser.Password)
+                 user.Password != checkedUser.EncryptPasswordBase64())
             {
                 return false;
             }
@@ -83,11 +87,20 @@ namespace OuTouchFilms.Services
         }
 
 
-        public async Task<bool> ChangeCurrentUserImage(HttpContext httpContext, string userImg)
+        public async Task<bool> ChangeCurrentUserProperties(HttpContext httpContext, string userImg, string emailSend)
         {
             int id = int.Parse(httpContext.Request.Cookies["id"]);
             var user = await context.Users.FindAsync(id);
             user.ImgUrl = userImg;
+
+            if (emailSend == "on")
+            {
+                user.NeedEmailSend = true;
+            }
+            else
+            {
+                user.NeedEmailSend = false;
+            }
 
             context.Users.Update(user);
             await context.SaveChangesAsync();
@@ -133,40 +146,20 @@ namespace OuTouchFilms.Services
             }
         }
 
-        //public async Task<bool> AddUserAchievment(int achievementId, int userId)
-        //{
-        //    if((await context.UserAchievments.FirstOrDefaultAsync(ac => ac.AchievementId == achievementId && ac.UserId == userId)) != null)
-        //    {
-        //        return false;
-        //    }
 
-        //    await context.UserAchievments.AddAsync(new UserAchievment() { 
-        //        UserId = userId,
-        //        AchievementId = achievementId
-        //    });
-        //    await context.SaveChangesAsync();
+        public async Task<bool> CheckLogin(string login)
+        {
+            return (await context.Users.FirstOrDefaultAsync(us => us.Login == login)) != null;
+        }
 
-        //    return true;
-        //}
+        public async Task<bool> CheckEmail(string email)
+        {
+            return (await context.Users.FirstOrDefaultAsync(us => us.Email == email)) != null;
+        }
 
-
-        //public async Task<bool> AddAchievement(Achievement achievement)
-        //{
-
-        //    if (await context.Achievements.FirstOrDefaultAsync(ac =>
-        //        ac.Name == achievement.Name || (
-        //        ac.filmId == achievement.filmId &&
-        //        ac.SeriaNumber == achievement.SeriaNumber &&
-        //        ac.SecondsFromStart == achievement.SecondsFromStart)
-        //    ) != null)
-        //    {
-        //        return false;
-        //    }
-
-        //    await context.Achievements.AddAsync(achievement);
-        //    await context.SaveChangesAsync();
-
-        //    return true;
-        //}
+        public bool CheckPassword(string password)
+        {
+            return Regex.IsMatch(password, "^.*(?=.{5,20})(?=.*[a-zA-Z]|[а-яА-Я])(?=.*\\d).*$");
+        }
     }
 }

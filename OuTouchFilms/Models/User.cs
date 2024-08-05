@@ -1,4 +1,6 @@
-﻿namespace OuTouchFilms.Models
+﻿using System.Text;
+
+namespace OuTouchFilms.Models
 {
     public class User
     {
@@ -8,6 +10,7 @@
         public string Login { get; set; }
         public string ImgUrl { get; set; } = "";
         public string TypeAccount { get; set; } = "Обычный";
+        public bool NeedEmailSend { get; set; } = true;
 
 
         public int GetAccountImportant()
@@ -28,6 +31,12 @@
                     return 0;
 
             }
+        }
+        public string EncryptPasswordBase64()
+        {
+            var text = Encoding.UTF8.GetBytes(Password);
+            string encryptText = Convert.ToBase64String(text);
+            return encryptText;
         }
     }
 }

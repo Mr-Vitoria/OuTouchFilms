@@ -24,100 +24,28 @@ namespace OuTouchFilms.Controllers
 
         public async Task<IActionResult> Index()
         {
+            int userId = -1;
+            int.TryParse(HttpContext.Request.Cookies["id"], out userId);
+
+            //Проверка сервисной инфы
+            await ServicesInfoService.AddCountFilmsVisit(context, HttpContext);
+
             return View(new
             {
                 randomFilms = await filmService.getRandomFilms(10),
                 lastFilms = await filmService.getLastFilmsByDate(10),
                 news = await newsService.getLastNews(6),
-                searchModel = await filmService.GetSearchModel(new string[0])
+                searchModel = await filmService.GetSearchModel(new string[0], new string[0]),
+                userFilms = await filmService.GetLastUserFilms(6, userId)
             });
-        }
-
-        /*Не использовать!!! Переделай. Нет проверки существования видео к фильму*/
-        public async Task<IActionResult> AddRandomFilm(string lastUrl = "/")
-        {
-            var urlSwagger = "https://kinopoiskapiunofficial.tech/api/v2.2/films?order=RATING&type=ALL&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&page=1";
-            HttpClient httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Add("X-API-KEY", "038f49e8-10f0-495e-a44d-845920b960d9");
-            httpClient.DefaultRequestHeaders.Add("accept", "application/json");
-            HttpResponseMessage httpResponseMessage = await httpClient.GetAsync(urlSwagger);
-            Stream responseStream = httpResponseMessage.Content.ReadAsStream();
-            StreamReader reader = new StreamReader(responseStream);
-
-            dynamic filmsArray = (dynamic)JsonConvert.DeserializeObject(reader.ReadToEnd());
-            for (int i = 0; i < filmsArray.items.Count; i++)
-            {
-                dynamic filmJson = filmsArray.items[i];
-                int kinopoiskId = filmJson.kinopoiskId;
-                if (await context.Films.FirstOrDefaultAsync(f => f.KinopoiskId == kinopoiskId) != null)
-                {
-                    continue;
-                }
-                Film film = new Film();
-
-                film.KinopoiskId = kinopoiskId;
-                film.ImdbId = filmJson.imdbId;
-
-                film.Title = filmJson.nameRu;
-                film.OriginalTitle = filmJson.nameOriginal;
-
-                List<Country> countries = await context.Countries.ToListAsync();
-                for (int j = 0; j < filmJson.countries.Count; j++)
-                {
-                    string country = filmJson.countries[j].country;
-
-                    Country filmCountry = countries.FirstOrDefault(c => c.Name == country);
-                    if (filmCountry == null)
-                    {
-                        filmCountry = new Country();
-                        filmCountry.Name = country;
-                        await context.Countries.AddAsync(filmCountry);
-                        await context.SaveChangesAsync();
-                        countries.Add(filmCountry);
-                    }
-
-                    film.Countries += filmCountry.Id + ";";
-                }
-
-
-                List<FilmGenre> genres = await context.FilmGenres.ToListAsync();
-                for(int j = 0; j < filmJson.genres.Count; j++)
-                {
-                    string genre = filmJson.genres[j].genre;
-                    genre = genre.Substring(0,1).ToUpper() + genre.Substring(1);
-
-                    FilmGenre filmGenre = genres.FirstOrDefault(g => g.Title == genre);
-                    if (filmGenre == null)
-                    {
-                        filmGenre = new FilmGenre();
-                        filmGenre.Title = genre;
-                        await context.FilmGenres.AddAsync(filmGenre);
-                        await context.SaveChangesAsync();
-                        genres.Add(filmGenre);
-                    }
-
-                    film.Genres += filmGenre.Id+";";
-                }
-
-                film.KinopoiskRating = filmJson.ratingKinopoisk;
-                film.ImdbRating = filmJson.ratingImdb;
-                film.Type = filmJson.type;
-                film.Year = filmJson.year;
-
-
-                film.Poster = filmJson.posterUrl;
-
-                await context.Films.AddAsync(film);
-                await context.SaveChangesAsync();
-
-            }
-
-
-            return Redirect(lastUrl);
         }
 
         public async Task<IActionResult> Details(int id)
         {
+            //Проверка сервисной инфы
+            await ServicesInfoService.AddCountFilmsVisit(context, HttpContext);
+
+
             int userId = -1;
             if (HttpContext.Request.Cookies.ContainsKey("id"))
             {
@@ -128,6 +56,10 @@ namespace OuTouchFilms.Controllers
 
         public async Task<IActionResult> AddDetailsInformation(int id, string lastUrl = "/")
         {
+            //Проверка сервисной инфы
+            await ServicesInfoService.AddCountFilmsVisit(context, HttpContext);
+
+
             await filmService.AddFullFilmsInformation(id);
 
             return Redirect(lastUrl);
@@ -135,6 +67,10 @@ namespace OuTouchFilms.Controllers
 
         public async Task<IActionResult> Search(string title, int count = -1, bool isNeedAddFilms = false)
         {
+            //Проверка сервисной инфы
+            await ServicesInfoService.AddCountFilmsVisit(context, HttpContext);
+
+
             var films = await filmService.getFilmsByTitle(title, count);
 
             if (isNeedAddFilms)
@@ -162,13 +98,17 @@ namespace OuTouchFilms.Controllers
             
             return films;
         }
-        public async Task<IActionResult> FilmList(string[] genres, int page = 1, string sortBy = "Name", int minYear = -1, int maxYear = -1)
+        public async Task<IActionResult> FilmList(string[] genres,string[] countries, int page = 1, string sortBy = "Name", int minYear = -1, int maxYear = -1)
         {
-            var filmsModel = await filmService.getAllFilms(30, page, sortBy, genres, minYear, maxYear);
+            //Проверка сервисной инфы
+            await ServicesInfoService.AddCountFilmsVisit(context, HttpContext);
+
+
+            var filmsModel = await filmService.getAllFilms(30, page, sortBy, genres, countries, minYear, maxYear);
             return View(new
             {
                 filmsModel = filmsModel,
-                searchModel = await filmService.GetSearchModel(genres, sortBy, minYear, maxYear)
+                searchModel = await filmService.GetSearchModel(genres, countries, sortBy, minYear, maxYear)
             });
         }
         public async Task<IActionResult> FilmListPagination(string genresJson, int page = 1, string sortBy = "Name", int minYear = -1, int maxYear = -1)
@@ -200,6 +140,7 @@ namespace OuTouchFilms.Controllers
             if (userFilm != null)
             {
                 userFilm.TypeOfUserFilm = typeFilmUser;
+                userFilm.AddedDate = DateOnly.FromDateTime(DateTime.Now);
                 context.UserFilms.Update(userFilm);
             }
             else
@@ -208,69 +149,14 @@ namespace OuTouchFilms.Controllers
                 {
                     FilmId = filmId,
                     UserId = userId,
-                    TypeOfUserFilm = typeFilmUser
+                    TypeOfUserFilm = typeFilmUser,
+                    AddedDate = DateOnly.FromDateTime(DateTime.Now)
                 });
             }
-
 
             await context.SaveChangesAsync();
             return Redirect(lastUrl);
 
-        }
-
-        public async Task<bool> ChangeUsersFilmFromJs(int userId, int filmId, TypeOfUserFilm typeFilmUser)
-        {
-            UserFilms userFilm = await context.UserFilms.FirstOrDefaultAsync(f => f.UserId == userId && f.FilmId == filmId);
-            Film film = await context.Films.FindAsync(filmId);
-            if (userFilm != null)
-            {
-                if (typeFilmUser == TypeOfUserFilm.None)
-                {
-                    context.UserFilms.Remove(userFilm);
-                }
-                if (userFilm.TypeOfUserFilm != typeFilmUser)
-                {
-                    if (userFilm.TypeOfUserFilm == TypeOfUserFilm.Completed && typeFilmUser == TypeOfUserFilm.Watching)
-                    {
-                        return false;
-                    }
-
-                    if (typeFilmUser == TypeOfUserFilm.Completed && film.Status == "Выходит")
-                    {
-                        return false;
-                    }
-                    userFilm.TypeOfUserFilm = typeFilmUser;
-                    context.UserFilms.Update(userFilm);
-                }
-            }
-            else
-            {
-                await context.UserFilms.AddAsync(new UserFilms()
-                {
-                    FilmId = filmId,
-                    UserId = userId,
-                    TypeOfUserFilm = typeFilmUser
-                });
-            }
-
-
-            await context.SaveChangesAsync();
-            return true;
-
-        }
-
-
-        public async Task<IActionResult> AddFilmByTitle(string title,string lastUrl = "/")
-        {
-            await filmService.AddFilmsByTitle(title);
-
-            return Redirect(lastUrl);
-        }
-        public async Task<IActionResult> AddFilmById(int id,string lastUrl = "/")
-        {
-            await filmService.AddFilmsById(id);
-
-            return Redirect(lastUrl);
         }
     }
 }

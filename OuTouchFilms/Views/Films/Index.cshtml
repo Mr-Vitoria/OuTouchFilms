@@ -4,6 +4,32 @@
 }
 
 @{
+    var lastUserFilms = @Model.userFilms;
+}
+@if (lastUserFilms != null && lastUserFilms.Count > 0)
+{
+    <section class="lastActivitiesFilm">
+        <h2>Последняя ваша активность</h2>
+
+        <div class="filmList">
+
+            @for (int i = 0; i < lastUserFilms.Count; i++)
+            {
+                <a class="cardHref" asp-action="Details" asp-controller="Films" asp-route-id="@lastUserFilms[i].Id">
+                    <img src="@lastUserFilms[i].Poster)" />
+                    <div class="d-flex flex-column">
+                        <p>@lastUserFilms[i].Title</p>
+                        <p>Тип: @lastUserFilms[i].Type</p>
+                    </div>
+                </a>
+            }
+        </div>
+
+    </section>
+}
+
+
+@{
     var lastFilms = @Model.lastFilms;
 }
 @if (lastFilms.Count > 0)

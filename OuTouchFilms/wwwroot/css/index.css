@@ -9,6 +9,50 @@ span.type {
 
 
 
+.lastActivitiesFilm {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+    .lastActivitiesFilm .filmList {
+        max-height: 600px;
+        overflow-y: auto;
+        align-content: start;
+        flex-wrap: wrap;
+    }
+
+    .lastActivitiesFilm .cardHref {
+        width: 33%;
+        height: 200px;
+        display: flex;
+        margin-bottom: 0px;
+        /*border: 3px solid white;*/
+        padding: 20px 10px;
+    }
+
+        .lastActivitiesFilm .cardHref img {
+            width: 125px !important;
+            height: 125px;
+            border-radius: 100%;
+            margin-right: 25px;
+            min-width: 125px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .lastActivitiesFilm .cardHref p {
+            font-size: 1.2em;
+            font-weight: 600;
+            max-height: 150px;
+            overflow-y: hidden;
+        }
+
+            .lastActivitiesFilm .cardHref p:nth-child(2),
+            .lastActivitiesFilm .cardHref p:nth-child(3) {
+                font-size: 1.2em;
+                font-weight: 100
+            }
 .newsSection{
     margin: 50px 50px;
 }
@@ -60,6 +104,7 @@ span.type {
     border-radius:100%;
     width:125px;
     height:125px;
+    object-fit:cover;
 }
     .newsCard p {
         width: 50%;
@@ -90,7 +135,7 @@ span.type {
         margin-right: 25px;
         min-width: 125px;
         object-fit: cover;
-        object-position: bottom;
+        object-position: center;
     }
     .randomFilmSection .cardHref p {
         font-size: 1.2em;
@@ -104,7 +149,7 @@ span.type {
 
 .mainContainer {
     display: flex;
-    justify-content:space-between;
+    justify-content:space-evenly;
 }
 
 
@@ -195,7 +240,7 @@ span.type {
         margin: 50px 0;
     }
     .randomFilmSection {
-        width: 48%;
+        width: 100%;
         margin: 0;
     }
     .searchFilmSection{
@@ -221,7 +266,11 @@ span.type {
     }
 
     .mainContainer {
+        margin-top:50px;
         flex-wrap:wrap;
+    }
+    .lastActivitiesAnime .cardHref {
+        width: 49%;
     }
 }
 @media(max-height:800px) {
@@ -245,6 +294,13 @@ span.type {
     }
     .newsList{
         align-items:center;
+    }
+}
+@media(max-width:820px) {
+
+    .lastActivitiesAnime .cardHref {
+        width: 100%;
+        height: fit-content;
     }
 }
 

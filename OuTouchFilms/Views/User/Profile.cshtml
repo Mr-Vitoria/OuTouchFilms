@@ -14,16 +14,29 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form asp-action="ChangeImage" asp-controller="User">
+                <form asp-action="ChangeUserProperty" asp-controller="User">
 
-                    <h2>Изменить профиль:</h2>
-                    <p>Изображение</p>
-                    <input type="url" name="imgUrl" />
-                    <button type="submit">Изменить</button>
+                    <p>Настройки аккаунта</p>
+                    <label for="imgUrl">Изображение</label>
+                    <input value="@Model.user.ImgUrl" id="imgUrl" type="url" name="imgUrl" />
+                    <p>Рассылки</p>
+                    @if (Model.user.NeedEmailSend)
+                    {
+                        <label class="emailSend" for="emailSend"><input type="checkbox" name="emailSend" id="emailSend" checked /> Получать email рассылку</label>
+                    }
+                    else
+                    {
+                        <label class="emailSend" for="emailSend"><input type="checkbox" name="emailSend" id="emailSend" /> Получать email рассылку</label>
+                    }
+
+
+                    <div class="btnContainer">
+                        <button type="submit" class="primary">Сохранить</button>
+                        <button type="button" data-bs-dismiss="modal">Закрыть</button>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
             </div>
         </div>
     </div>
@@ -37,18 +50,24 @@
     <img src=@userImg />
 
     <label>Логин</label>
-    <p>@Model.user.Login</p>
+    @if (@Model.user.GetAccountImportant() > 5)
+    {
+        <p style="color:red;">@Model.user.Login</p>
+    }
+    else
+    {
+        <p>@Model.user.Login</p>
+    }
+
     <label>Email</label>
     <p>@Model.user.Email</p>
-    <label>Вид аккаунта</label>
-    <p>@Model.user.TypeAccount</p>
 
     <div class="buttonsContainer">
 
-        <a href="#changeProfileModal" data-bs-toggle="modal" >Изменить профиль</a>
+        <a href="#changeProfileModal" data-bs-toggle="modal" >Настройки</a>
         @if (Model.user.GetAccountImportant() > 5)
         {
-            <a asp-action="AdminPanel" asp-controller="User">Админ-панель</a>
+            <a href="http://admin.outouch.ru">Админ-панель</a>
         }
         <a asp-action="SignOut" asp-controller="User">Выйти</a>
     </div>
