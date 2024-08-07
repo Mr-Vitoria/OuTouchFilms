@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OuTouchFilms.Server.Entity.Models;
+namespace OuTouchFilms.Server.Services.Models;
 
-public partial class UserFilm
+public partial class UserFilmView
 {
     public int Id { get; set; }
 
@@ -13,7 +13,7 @@ public partial class UserFilm
 
     public string TypeOfUserFilm { get; set; } = null!;
 
-    public DateTime AddedDate { get; set; }
+    public DateTime AddedDate { get; set; } = DateTime.Now;
 
-    public virtual Film Film { get; set; } = null!;
+    public virtual FilmView Film { get; set; } = null!;
 }

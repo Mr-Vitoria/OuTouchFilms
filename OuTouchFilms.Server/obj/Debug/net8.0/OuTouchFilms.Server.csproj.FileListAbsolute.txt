@@ -101,3 +101,4 @@ C:\Users\olegn\source\Project\OuTouchFilms\OuTouchFilms.Server\obj\Debug\net8.0\
 C:\Users\olegn\source\Project\OuTouchFilms\OuTouchFilms.Server\obj\Debug\net8.0\OuTouchFilms.Server.pdb
 C:\Users\olegn\source\Project\OuTouchFilms\OuTouchFilms.Server\obj\Debug\net8.0\OuTouchFilms.Server.genruntimeconfig.cache
 C:\Users\olegn\source\Project\OuTouchFilms\OuTouchFilms.Server\obj\Debug\net8.0\ref\OuTouchFilms.Server.dll
+C:\Users\olegn\source\Project\OuTouchFilms\OuTouchFilms.Server\obj\Debug\net8.0\OuTouchFilms.Server.sourcelink.json

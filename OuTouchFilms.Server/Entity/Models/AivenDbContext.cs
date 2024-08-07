@@ -105,9 +105,7 @@ public partial class AivenDbContext : DbContext
         {
             entity.HasIndex(e => e.FilmId, "IX_UserFilms_FilmId");
 
-            entity.HasIndex(e => e.UserId, "IX_UserFilms_UserId");
-
-            entity.Property(e => e.AddedDate).HasDefaultValueSql("'2023-10-10'::date");
+            entity.Property(e => e.AddedDate).HasDefaultValueSql("'-infinity'::timestamp with time zone");
 
             entity.HasOne(d => d.Film).WithMany(p => p.UserFilms).HasForeignKey(d => d.FilmId);
         });

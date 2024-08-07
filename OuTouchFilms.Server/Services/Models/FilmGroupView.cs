@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OuTouchFilms.Server.Entity.Models;
+namespace OuTouchFilms.Server.Services.Models;
 
-public partial class FilmGroup
+public partial class FilmGroupView
 {
     public int Id { get; set; }
 
@@ -11,7 +11,5 @@ public partial class FilmGroup
 
     public string Type { get; set; } = null!;
 
-    public int? ConditionId { get; set; }
-
-    public string FilmIds { get; set; } = null!;
+    public List<FilmView> Films { get; set; } = null!;
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OuTouchFilms.Server.Entity.Models;
+namespace OuTouchFilms.Server.Services.Models;
 
-public partial class Condition
+public partial class ConditionView
 {
     public int Id { get; set; }
 
@@ -15,5 +15,5 @@ public partial class Condition
 
     public bool? IsReverse { get; set; }
 
-    public virtual ICollection<FilmGroup> FilmGroups { get; set; } = new List<FilmGroup>();
+    public virtual ICollection<FilmGroupView> FilmGroups { get; set; } = new List<FilmGroupView>();
 }

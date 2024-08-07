@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OuTouchFilms.Server.Entity.Models;
+namespace OuTouchFilms.Server.Services.Models;
 
-public partial class Studio
+public partial class GenreView
 {
     public int Id { get; set; }
 
