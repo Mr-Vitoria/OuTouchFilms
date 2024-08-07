@@ -5,8 +5,18 @@ namespace OuTouchFilms.Server.Services
 {
     public interface ICommentService
     {
-        public Task<List<CommentView>> GetCommentList(int animeId, Func<Comment, object>? orderBy = null);
-        public Task<List<CommentView>> GetUserCommentList(int userId, Func<Comment, object>? orderBy = null);
+        public Task<Tuple<List<CommentView>, bool>> GetCommentListByAnimeId(
+            int filmId, 
+            Func<Comment, object>? orderBy = null,
+            int count = 5,
+            int page = 0
+            );
+        public Task<Tuple<List<CommentView>, bool>> GetCommentListByUserId(
+            int userId, 
+            Func<Comment, object>? orderBy = null,
+            int count = 5,
+            int page = 0
+            );
         public Task<CommentView> GetComment(int id);
     }
 }

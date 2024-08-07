@@ -3,176 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\dbservices\\dbuserfilmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\dbservices\\dbuserfilmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\controllers\\userfilmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\controllers\\userfilmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\factories\\stafffactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\factories\\stafffactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\controllers\\models\\userfilmmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\controllers\\models\\userfilmmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\factories\\genrefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\factories\\genrefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\controllers\\models\\filmgroupmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\controllers\\models\\filmgroupmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\dbservices\\dbstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\dbservices\\dbstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\entity\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\entity\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\entity\\models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\entity\\models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\dbservices\\dbgenreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\dbservices\\dbgenreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\dbservices\\dbfilmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\dbservices\\dbfilmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\dbservices\\dbfilmgroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\dbservices\\dbfilmgroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\dbservices\\dbcountryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\dbservices\\dbcountryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\dbservices\\dbcommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\dbservices\\dbcommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\factories\\commentfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\factories\\commentfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\factories\\userfilmfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\factories\\userfilmfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\factories\\countryfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\factories\\countryfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\factories\\filmgroupfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\factories\\filmgroupfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\models\\filmgroupview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\models\\filmgroupview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\models\\filmview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\models\\filmview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\factories\\filmfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\factories\\filmfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\igenreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\igenreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\istaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\istaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\iuserfilmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\iuserfilmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\ifilmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\ifilmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\ifilmgroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\ifilmgroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\icountryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\icountryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\icommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\icommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\entity\\models\\userfilm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\entity\\models\\userfilm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\entity\\models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\entity\\models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\entity\\models\\filmstaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\entity\\models\\filmstaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\entity\\models\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\entity\\models\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\entity\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\entity\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\models\\conditionview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\models\\conditionview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\models\\countryview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\models\\countryview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\models\\genreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\models\\genreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\models\\filmstaffview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\models\\filmstaffview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\models\\staffview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\models\\staffview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\controllers\\models\\commentmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\controllers\\models\\commentmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\controllers\\filmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\controllers\\filmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\entity\\aivendbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\entity\\aivendbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\entity\\idbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\entity\\idbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\controllers\\useranimecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\controllers\\useranimecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\controllers\\filmgroupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\controllers\\filmgroupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\controllers\\animegroupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\controllers\\animegroupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\dbservices\\dbcommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\dbservices\\dbcommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\outouchfilms.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\outouchfilms.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\icommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\icommentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|c:\\users\\olegn\\source\\project\\outouchfilms\\outouchfilms.server\\services\\ifilmgroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C24426B7-30AA-4C45-B943-393F67685A41}|OuTouchFilms.Server\\OuTouchFilms.Server.csproj|solutionrelative:outouchfilms.server\\services\\ifilmgroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -182,203 +50,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 470,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StaffFactory.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\StaffFactory.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Factories\\StaffFactory.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\StaffFactory.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Factories\\StaffFactory.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:13:08.284Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DbFilmService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbFilmService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\DbServices\\DbFilmService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbFilmService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\DbServices\\DbFilmService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:12:36.75Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DbFilmGroupService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbFilmGroupService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\DbServices\\DbFilmGroupService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbFilmGroupService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\DbServices\\DbFilmGroupService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:12:34.53Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DbCountryService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbCountryService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\DbServices\\DbCountryService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbCountryService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\DbServices\\DbCountryService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:12:32.985Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CommentFactory.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\CommentFactory.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Factories\\CommentFactory.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\CommentFactory.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Factories\\CommentFactory.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABwAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:11:09.836Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UserFilmFactory.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\UserFilmFactory.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Factories\\UserFilmFactory.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\UserFilmFactory.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Factories\\UserFilmFactory.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:09:43.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GenreFactory.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\GenreFactory.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Factories\\GenreFactory.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\GenreFactory.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Factories\\GenreFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:09:29.628Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DbGenreService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbGenreService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\DbServices\\DbGenreService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbGenreService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\DbServices\\DbGenreService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:48:23.732Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DbStaffService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbStaffService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\DbServices\\DbStaffService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbStaffService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\DbServices\\DbStaffService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:48:33.48Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DbUserFilmService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbUserFilmService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\DbServices\\DbUserFilmService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbUserFilmService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\DbServices\\DbUserFilmService.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACYAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:41:59.623Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CountryFactory.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\CountryFactory.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Factories\\CountryFactory.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\CountryFactory.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Factories\\CountryFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:09:07.36Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "FilmGroupFactory.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\FilmGroupFactory.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Factories\\FilmGroupFactory.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\FilmGroupFactory.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Factories\\FilmGroupFactory.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:06:20.536Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "FilmGroupView.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\FilmGroupView.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\Models\\FilmGroupView.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\FilmGroupView.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\Models\\FilmGroupView.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:08:22.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DbCommentService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbCommentService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\DbServices\\DbCommentService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbCommentService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\DbServices\\DbCommentService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T08:06:12.729Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "FilmFactory.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\FilmFactory.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Factories\\FilmFactory.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Factories\\FilmFactory.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Factories\\FilmFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADkAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:50:34.814Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -389,388 +62,124 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IStaffService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\IStaffService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\IStaffService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\IStaffService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\IStaffService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "FilmGroupMessage.cs",
+              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\Models\\FilmGroupMessage.cs",
+              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Controllers\\Models\\FilmGroupMessage.cs",
+              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\Models\\FilmGroupMessage.cs",
+              "RelativeToolTip": "OuTouchFilms.Server\\Controllers\\Models\\FilmGroupMessage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:22:14.471Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-07T11:41:13.285Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IGenreService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\IGenreService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\IGenreService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\IGenreService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\IGenreService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:21:34.395Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "FilmView.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\FilmView.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\Models\\FilmView.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\FilmView.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\Models\\FilmView.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:25:13.23Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "IUserFilmService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\IUserFilmService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\IUserFilmService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\IUserFilmService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\IUserFilmService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:22:49.418Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "IFilmService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\IFilmService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\IFilmService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\IFilmService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\IFilmService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:19:41.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "IFilmGroupService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\IFilmGroupService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\IFilmGroupService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\IFilmGroupService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\IFilmGroupService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:18:49.877Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "ICountryService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\ICountryService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\ICountryService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\ICountryService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\ICountryService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:20:51.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ICommentService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\ICommentService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\ICommentService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\ICommentService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\ICommentService.cs",
+              "DocumentIndex": 3,
+              "Title": "CommentMessage.cs",
+              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\Models\\CommentMessage.cs",
+              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Controllers\\Models\\CommentMessage.cs",
+              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\Models\\CommentMessage.cs",
+              "RelativeToolTip": "OuTouchFilms.Server\\Controllers\\Models\\CommentMessage.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:20:47.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-07T11:41:11.547Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\appsettings.json",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\appsettings.json",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\appsettings.json",
-              "RelativeToolTip": "OuTouchFilms.Server\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAACPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-05T17:34:55.077Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "UserFilm.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\UserFilm.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Entity\\Models\\UserFilm.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\UserFilm.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Entity\\Models\\UserFilm.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "UserFilmMessage.cs",
+              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\Models\\UserFilmMessage.cs",
+              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Controllers\\Models\\UserFilmMessage.cs",
+              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\Models\\UserFilmMessage.cs",
+              "RelativeToolTip": "OuTouchFilms.Server\\Controllers\\Models\\UserFilmMessage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:24:02.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-07T11:41:09.908Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Genre.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\Genre.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Entity\\Models\\Genre.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\Genre.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Entity\\Models\\Genre.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "UserFilmController.cs",
+              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\UserFilmController.cs",
+              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Controllers\\UserFilmController.cs",
+              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\UserFilmController.cs",
+              "RelativeToolTip": "OuTouchFilms.Server\\Controllers\\UserFilmController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:31:04.045Z",
+              "WhenOpened": "2024-08-07T11:40:19.717Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "FilmStaff.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\FilmStaff.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Entity\\Models\\FilmStaff.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\FilmStaff.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Entity\\Models\\FilmStaff.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 5,
+              "Title": "FilmGroupController.cs",
+              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\FilmGroupController.cs",
+              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Controllers\\FilmGroupController.cs",
+              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\FilmGroupController.cs",
+              "RelativeToolTip": "OuTouchFilms.Server\\Controllers\\FilmGroupController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:31:02.077Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-07T11:40:15.467Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Country.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\Country.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Entity\\Models\\Country.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\Country.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Entity\\Models\\Country.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:30:49.713Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Comment.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\Comment.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Entity\\Models\\Comment.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\Comment.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Entity\\Models\\Comment.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:30:43.492Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "FilmStaffView.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\FilmStaffView.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\Models\\FilmStaffView.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\FilmStaffView.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\Models\\FilmStaffView.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:29:10.954Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "StaffView.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\StaffView.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\Models\\StaffView.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\StaffView.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\Models\\StaffView.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:27:43.723Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "GenreView.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\GenreView.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\Models\\GenreView.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\GenreView.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\Models\\GenreView.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:27:37.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "CountryView.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\CountryView.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\Models\\CountryView.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\CountryView.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\Models\\CountryView.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:25:06.705Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "ConditionView.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\ConditionView.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\Models\\ConditionView.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\Models\\ConditionView.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Services\\Models\\ConditionView.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:24:41.085Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "AivenDbService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\AivenDbService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Entity\\AivenDbService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\AivenDbService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Entity\\AivenDbService.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAACgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T17:42:31.031Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "IDbService.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\IDbService.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Entity\\IDbService.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\IDbService.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Entity\\IDbService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T17:42:24.172Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "CommentController.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\CommentController.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Controllers\\CommentController.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\CommentController.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Controllers\\CommentController.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAABBwCEAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T17:36:35.327Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "AnimeGroupController.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\AnimeGroupController.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Controllers\\AnimeGroupController.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\AnimeGroupController.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Controllers\\AnimeGroupController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T17:36:24.105Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "UserAnimeController.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\UserAnimeController.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Controllers\\UserAnimeController.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\UserAnimeController.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Controllers\\UserAnimeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T17:33:58.648Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 4,
               "Title": "FilmController.cs",
               "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\FilmController.cs",
               "RelativeDocumentMoniker": "OuTouchFilms.Server\\Controllers\\FilmController.cs",
               "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\FilmController.cs",
               "RelativeToolTip": "OuTouchFilms.Server\\Controllers\\FilmController.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAAUAAAAsAAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAADwvz4AAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T17:32:14.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-07T11:35:58.204Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "OuTouchFilms.Server.csproj",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\OuTouchFilms.Server.csproj",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\OuTouchFilms.Server.csproj",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\OuTouchFilms.Server.csproj",
-              "RelativeToolTip": "OuTouchFilms.Server\\OuTouchFilms.Server.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-08-05T17:28:37.502Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "2dbd4788-8ff0-47ea-8f4f-ed0a97ab7eaa",
-        "Display": 1,
-        "X": 52,
-        "Y": 85,
-        "Width": 1578,
-        "Height": 779,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Film.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\Film.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Entity\\Models\\Film.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\Film.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Entity\\Models\\Film.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAACgAAAAAAAAA",
+              "DocumentIndex": 7,
+              "Title": "DbCommentService.cs",
+              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbCommentService.cs",
+              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\DbServices\\DbCommentService.cs",
+              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\DbServices\\DbCommentService.cs",
+              "RelativeToolTip": "OuTouchFilms.Server\\Services\\DbServices\\DbCommentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADkAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:55:27.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-07T11:32:46.827Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Staff.cs",
-              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\Staff.cs",
-              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Entity\\Models\\Staff.cs",
-              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Entity\\Models\\Staff.cs",
-              "RelativeToolTip": "OuTouchFilms.Server\\Entity\\Models\\Staff.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 8,
+              "Title": "ICommentService.cs",
+              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\ICommentService.cs",
+              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\ICommentService.cs",
+              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\ICommentService.cs",
+              "RelativeToolTip": "OuTouchFilms.Server\\Services\\ICommentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T07:31:05.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-07T11:32:01.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IFilmGroupService.cs",
+              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\IFilmGroupService.cs",
+              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Services\\IFilmGroupService.cs",
+              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Services\\IFilmGroupService.cs",
+              "RelativeToolTip": "OuTouchFilms.Server\\Services\\IFilmGroupService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T11:31:56.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\CommentController.cs",
+              "RelativeDocumentMoniker": "OuTouchFilms.Server\\Controllers\\CommentController.cs",
+              "ToolTip": "C:\\Users\\olegn\\source\\Project\\OuTouchFilms\\OuTouchFilms.Server\\Controllers\\CommentController.cs",
+              "RelativeToolTip": "OuTouchFilms.Server\\Controllers\\CommentController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T11:27:01.045Z"
             }
           ]
         }

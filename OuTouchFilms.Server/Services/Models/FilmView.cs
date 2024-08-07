@@ -62,4 +62,6 @@ public partial class FilmView
     public DateTime? LastUpdate { get; set; }
 
     public virtual ICollection<CommentView> Comments { get; set; } = new List<CommentView>();
+
+    public bool isUserPlan { get; set; } = false;
 }

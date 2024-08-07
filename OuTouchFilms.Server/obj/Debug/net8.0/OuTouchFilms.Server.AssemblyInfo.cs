@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OuTouchFilms.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b44ab5f96f3ca219cdf43389988c1ca58a0acaa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5401e3373e5f153a4b3e9be4f817fc2fb3d1af34")]
 [assembly: System.Reflection.AssemblyProductAttribute("OuTouchFilms.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OuTouchFilms.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
