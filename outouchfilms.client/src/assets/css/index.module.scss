@@ -1,0 +1,646 @@
+main{
+    padding-top:30px;
+}
+
+/* Самая верхняя секция */
+.topFilm {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 50px;
+    background-color: rgba(23, 23, 23, 0.2);
+
+
+    .bgImage {
+        width: 100%;
+        height: 100vh;
+
+        position: absolute;
+        float: left;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        filter: brightness(50%);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+
+    .bgImage.append {
+        animation: append 750ms forwards;
+    }
+
+    .bgImage.disappend {
+        animation: disAppend 750ms forwards;
+    }
+
+
+    @keyframes append {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes disAppend {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .textContainer {
+        width: 35%;
+
+        * {
+            text-overflow: ellipsis;
+        }
+
+        .title {
+            font-size: 4em;
+            font-weight: bold;
+            max-height: 165px;
+            overflow-y: hidden;
+        }
+
+        .info {
+            font-size: 2em;
+            margin: 20px 0;
+
+            .age {
+                background-color: var(--main-bg-color);
+                border-radius: 8px;
+                padding: 2px 4px;
+            }
+        }
+
+        .info,
+        .description {
+            font-size: 1.2em;
+        }
+
+        .description {
+            max-height: 145px;
+            overflow-y: hidden;
+        }
+
+        .btnContainer {
+            display: flex;
+            width: auto;
+            margin-top: 40px;
+
+            a {
+                text-decoration: none;
+                margin-right: 25px;
+            }
+
+        }
+
+    }
+
+    .textContainer.append {
+        animation: append 750ms forwards;
+    }
+
+    .textContainer.disappend {
+        animation: disAppend 450ms forwards;
+    }
+
+
+    .carousel {
+        height: 320px;
+        padding: 130px 50px;
+        width: 65%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        background-color: rgba(0, 0, 0, 0.1);
+        // backdrop-filter: blur(5px);
+
+        .control {
+            width: 40px;
+            background-color: transparent;
+            transition-duration: 350ms;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+
+            img {
+                filter: invert(1);
+                width: 100%;
+            }
+
+            &.prev {
+                img {
+                    transform: rotateZ(180deg);
+                }
+            }
+
+            &:hover {
+                transition-duration: 350ms;
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        a {
+            height: 100%;
+            transition-duration: 1s;
+            max-width: 18%;
+            margin: 0 10px;
+            border-radius: 10px;
+            width: 18%;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+        }
+
+        a.nextCard {
+            display: block;
+            overflow: hidden;
+            max-height: 90%;
+
+            img {
+                filter: brightness(0.8);
+            }
+        }
+
+
+        a.centerCard {
+            display: block;
+            overflow: hidden;
+            max-height: 100%;
+        }
+
+        a.exitCard {
+            display: block;
+            overflow: hidden;
+            max-height: 85%;
+
+            img {
+                filter: brightness(0.6);
+            }
+        }
+
+        a.outHtml {
+            display: block;
+            overflow: hidden;
+            max-height: 0%;
+            max-width: 0%;
+
+            img {
+                filter: brightness(0.6);
+            }
+        }
+    }
+
+    .bottomBlur {
+        background: var(--body-bg-color);
+        background: linear-gradient(180deg, rgba(13, 10, 13, 0) 0%, var(--body-bg-color) 80%);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+        left: 0;
+
+    }
+}
+
+// Секция поиска
+.searchSection {
+    background-color: var(--body-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+
+    .content {
+        background-color: var(--second-bg-color);
+        width: 80%;
+        height: 80vh;
+        padding: 1.5% 3%;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: row;
+
+        .list {
+            width: 40%;
+            padding: 0 40px;
+            border-right: 1px solid var(--main-text-color);
+            overflow-y: auto;
+
+
+
+            p {
+                cursor: pointer;
+                font-size: 1.4em;
+                padding: 10px 0;
+                margin: 15px 0;
+                display: block;
+                width: 90%;
+                transition-duration: 250ms;
+
+                img {
+                    transition-duration: 250ms;
+                    filter: invert(1);
+                    float: right;
+                    width: 25px;
+                    opacity: 0;
+                }
+            }
+
+            p.active {
+                transition-duration: 250ms;
+                padding: 5px;
+                border-bottom: 1px solid var(--main-text-color);
+
+                img {
+                    transition-duration: 250ms;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .list:last-child {
+            border: none;
+        }
+
+        .list.filter {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h4 {
+                margin-bottom: 10px;
+            }
+
+            h5 {
+                margin-bottom: 30px;
+            }
+
+            button {
+                cursor: pointer;
+                margin-top: 20px;
+            }
+
+            input,
+            textarea,
+            select {
+                margin-top: 5px;
+                width: 100%;
+            }
+
+            select option {
+                color: black;
+            }
+
+            textarea {
+                resize: vertical;
+            }
+
+            label {
+                font-size: 1.6em;
+            }
+
+            .field {
+                margin-top: 50px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+// Секция фильмов по подборкам
+.filmGroupSection {
+    padding: 0 50px;
+
+    h5 {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+
+    .group {
+        width: 100%;
+        margin: 50px 0;
+
+        .carousel {
+            overflow-x: auto;
+            margin-top: 30px;
+            display: flex;
+            padding-bottom: 30px;
+
+
+        }
+    }
+}
+
+.card {
+    overflow: hidden;
+    display: block;
+    min-width: 280px;
+    width: 280px;
+    height: 180px;
+    margin-right: 50px;
+    background-size: cover;
+    background-position: center;
+    text-decoration: none;
+    border-radius: 25px;
+
+    .content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.15);
+
+        span {
+            width: fit-content;
+            height: fit-content;
+            position: relative;
+            top: 10px;
+            left: 20px;
+            background-color: var(--main-bg-color);
+            padding: 3px 8px;
+            border-radius: 5px;
+        }
+
+        img {
+            width: 40px;
+            height: fit-content;
+            display: none;
+
+            position: relative;
+            top: 10px;
+            right: 20px;
+        }
+
+    }
+
+    &.watching {
+        .content {
+            background-color: rgba(0, 0, 0, 0.8);
+
+            img {
+                display: block;
+            }
+        }
+    }
+}
+
+// Секция с расписанием аниме
+
+@media (max-width:1920px) {
+    .topFilm {
+        .carousel {
+            height: 280px;
+            padding: 100px 30px;
+        }
+    }
+}
+
+@media (max-width:1700px) {
+    .topFilm {
+        .carousel {
+            height: 240px;
+            padding: 100px 30px;
+        }
+    }
+}
+
+@media (max-width:1500px) {
+    .topFilm {
+        .carousel {
+            height: 200px;
+            padding: 70px 30px;
+            width: 60%;
+        }
+
+        .textContainer {
+            width: 40%;
+
+            .title {
+                font-size: 2.5em;
+                height: 100px;
+            }
+
+            .description {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .searchSection {
+
+        .content {
+            width: 90%;
+            height: 70vh;
+
+            .list {
+                width: 35%;
+            }
+
+            .list.filter {
+                width: 30%;
+            }
+        }
+    }
+
+    .topFilm {
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+        padding-top: 50px;
+        padding-bottom: 300px;
+
+        .carousel {
+            width: 100%;
+            height: 30%;
+            padding: 0 30px;
+            background-color: transparent;
+        }
+
+        .textContainer {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .title {
+                margin-right: 35px;
+            }
+
+            .btnContainer {
+                width: 100%;
+            }
+        }
+
+
+    }
+}
+
+@media (max-width: 1230px) {
+    .searchSection {
+        .content {
+            flex-direction: column;
+            justify-content: center;
+            height: fit-content;
+
+            .list {
+                margin-top: 50px;
+                width: 100%;
+                height: 250px;
+                padding: 0;
+                overflow-y: auto;
+
+                border: none;
+                border-bottom: 1px solid var(--main-text-color);
+
+                p {
+                    width: auto;
+
+                    img {
+                        transform: rotateZ(90deg);
+                    }
+                }
+            }
+
+            .list.filter {
+                width: 100%;
+                padding: 0;
+
+                select,
+                input,
+                select,
+                textarea {
+                    margin-top: 25px;
+                    width: 95%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .topFilm {
+
+        .carousel {
+            height: 20%;
+            padding: 40px 25px;
+        }
+    }
+}
+
+@media (max-width: 840px) {
+
+    .topFilm {
+
+        .carousel {
+            height: 26%;
+
+            a {
+                max-width: 33%;
+                width: 33%;
+            }
+
+            a.exitCard {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 750px) {
+
+    .topFilm {
+
+        .carousel {
+            height: 20%;
+        }
+
+        .textContainer {
+            flex-direction: column;
+            align-items: center;
+
+            .title {
+                margin: 0;
+                text-align: center;
+            }
+
+            .btnContainer {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 650px) {
+
+    .topFilm {
+
+        .carousel {
+            height: 26%;
+        }
+
+        .carousel {
+            a.centerCard {
+                max-width: none;
+                width: 190px;
+            }
+
+            a.nextCard {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+
+    .topFilm {
+        padding: 0 25px;
+
+        .textContainer {
+            .btnContainer {
+                flex-direction: column;
+                align-items: center;
+
+                .btn {
+                    margin: 0;
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,314 @@
+h3 {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.infoSection {
+    padding: 0 50px;
+    padding-top: 150px;
+
+    .greeting {
+        padding-left: 50px;
+        font-size: 3em;
+        font-weight: bold;
+    }
+
+    .actionContainer {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 50px;
+
+        .action {
+            width: 28%;
+            min-width: 420px;
+            overflow: hidden;
+            background-color: var(--second-bg-color);
+            border-radius: 15px;
+            padding: 1.5% 2%;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+
+            .header {
+                display: flex;
+                justify-content: space-between;
+
+                p {
+                    font-size: 1.5em;
+                    font-weight: bold;
+                }
+            }
+
+            img {
+                width: 75px;
+                height: 75px;
+                object-fit: cover;
+                border-radius: 100%;
+            }
+
+            p {
+                font-size: 1.3em;
+
+                &.description {
+                    color: var(--hover-text-color);
+                    margin-top: 10px;
+                    margin-bottom: 25px;
+                    font-size: 1.2em;
+                }
+            }
+
+            button.btn {
+
+                &.right {
+                    float: right;
+                }
+
+                img {
+                    width: 35px;
+                    height: 30px;
+                    object-fit: contain;
+                    border-radius: 0;
+                }
+            }
+
+            .info {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+
+.btn.exit {
+    margin: 50px auto;
+    font-size: 2em;
+    padding: 10px 35px;
+}
+
+// Toogle switch
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+
+        &:checked+.slider {
+            background-color: var(--main-bg-color);
+        }
+
+        &:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        &:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        &.round {
+            border-radius: 34px;
+
+            &:before {
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.orderHistory {
+    padding: 0 50px;
+}
+
+.userInfoModal {
+    padding: 0;
+
+    .modal {
+        height: fit-content;
+
+        .header {
+            button {
+                cursor: pointer !important;
+            }
+        }
+
+        .body {
+            margin-top: 45px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .inputContainer {
+                width: 45%;
+                margin-bottom: 35px;
+
+                label {
+                    display: block;
+                }
+
+                input {
+                    width: 80%;
+                }
+            }
+
+            .footer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+
+    }
+}
+
+.bookmarkList{
+    .header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        button{
+            padding: 0 20px;
+            padding-bottom: 10px;
+
+            background-color: transparent;
+            border: none;
+            outline: none;
+
+            font-size: 1.4em;
+            cursor: pointer;
+            
+            &.active{
+                border-bottom: 1px solid var(--main-bg-color);
+            }
+        }
+    }
+
+    .body{
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .card{
+            margin: 20px 0;
+            width: 18%;
+            min-width: 300px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+
+            img{
+                border-radius: 10px;
+                width: 100%;
+                height: 400px;
+                margin-bottom: 25px;
+
+                object-fit: cover;
+            }
+            p{
+                width: 100%;
+                margin: 5px 0;
+                
+                text-align: center;
+                font-size: 1.2em;
+             
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width:850px) {
+    .infoSection .actionContainer .action {
+        padding: 18px 30px;
+    }
+
+    .btn.exit {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width:800px) {
+    .bookmarkList .header{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        button{
+            width: 100%;
+            text-align: center;
+            margin: 15px 0;
+        }
+    }
+}
+
+
+@media (max-width: 780px) {
+    .orderHistory {
+        padding: 0 30px;
+    }
+
+    .infoSection {
+        padding: 180px 30px;
+    }
+
+    .userInfoModal {
+        padding-top: 50px;
+
+        .modal .body .inputContainer {
+            width: 95%;
+            margin-bottom: 35px;
+        }
+    }
+}
+
+@media (max-width:600px) {
+    .infoSection .actionContainer .action {
+        height: fit-content;
+        width: 100%;
+        min-width: auto;
+
+    }
+
+    .infoSection .greeting {
+        text-align: center;
+        padding-left: 0;
+    }
+}
